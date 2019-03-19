@@ -1,4 +1,4 @@
-<h1>Listing Paises</h1>
+<h1>Paises</h1>
 
 <table>
   <thead>
@@ -14,13 +14,13 @@
       <td><%= pais.nome %></td>
 
       <td>
-        <%= link "Show", to: Routes.pais_path(@conn, :show, pais) %>
-        <%= link "Edit", to: Routes.pais_path(@conn, :edit, pais) %>
-        <%= link "Delete", to: Routes.pais_path(@conn, :delete, pais), method: :delete, data: [confirm: "Are you sure?"] %>
+        <%= link "Visualizar", to: Routes.pais_path(@conn, :show, pais) %>
+        <%= link "Editar", to: Routes.pais_path(@conn, :edit, pais) %>
+        <%= link "Excluir", to: Routes.pais_path(@conn, :delete, pais), method: :delete, data: [confirm: "Are you sure?"] %>
       </td>
     </tr>
 <% end %>
   </tbody>
 </table>
 
-<span><%= link "New Pais", to: Routes.pais_path(@conn, :new) %></span>
+<span><%= link "Novo", to: Routes.pais_path(@conn, :new) %></span>

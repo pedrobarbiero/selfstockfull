@@ -2,4 +2,4 @@
 
 <%= render "form.html", Map.put(assigns, :action, Routes.pais_path(@conn, :update, @pais)) %>
 
-<span><%= link "Back", to: Routes.pais_path(@conn, :index) %></span>
+<span><%= link "Voltar", to: Routes.pais_path(@conn, :index) %></span>
