@@ -1,0 +1,38 @@
+<h1>Show Fornecedor</h1>
+
+<ul>
+
+  <li>
+    <strong>Nome fantasia:</strong>
+    <%= @fornecedor.nome_fantasia %>
+  </li>
+
+  <li>
+    <strong>Razao social:</strong>
+    <%= @fornecedor.razao_social %>
+  </li>
+
+  <li>
+    <strong>Email:</strong>
+    <%= @fornecedor.email %>
+  </li>
+
+  <li>
+    <strong>Cnpj:</strong>
+    <%= @fornecedor.cnpj %>
+  </li>
+
+  <li>
+    <strong>Telefone:</strong>
+    <%= @fornecedor.telefone %>
+  </li>
+
+  <li>
+    <strong>Inscrica estadual:</strong>
+    <%= @fornecedor.inscrica_estadual %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.fornecedor_path(@conn, :edit, @fornecedor) %></span>
+<span><%= link "Back", to: Routes.fornecedor_path(@conn, :index) %></span>

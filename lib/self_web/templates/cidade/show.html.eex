@@ -1,0 +1,13 @@
+<h1>Show Cidade</h1>
+
+<ul>
+
+  <li>
+    <strong>Nome:</strong>
+    <%= @cidade.nome %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.cidade_path(@conn, :edit, @cidade) %></span>
+<span><%= link "Back", to: Routes.cidade_path(@conn, :index) %></span>

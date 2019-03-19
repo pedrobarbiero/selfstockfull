@@ -1,0 +1,28 @@
+<h1>Show Endereco</h1>
+
+<ul>
+
+  <li>
+    <strong>Logradouro:</strong>
+    <%= @endereco.logradouro %>
+  </li>
+
+  <li>
+    <strong>Numero:</strong>
+    <%= @endereco.numero %>
+  </li>
+
+  <li>
+    <strong>Cep:</strong>
+    <%= @endereco.cep %>
+  </li>
+
+  <li>
+    <strong>Bairro:</strong>
+    <%= @endereco.bairro %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.endereco_path(@conn, :edit, @endereco) %></span>
+<span><%= link "Back", to: Routes.endereco_path(@conn, :index) %></span>

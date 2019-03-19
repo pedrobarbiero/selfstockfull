@@ -1,0 +1,18 @@
+<h1>Show Estado</h1>
+
+<ul>
+
+  <li>
+    <strong>Nome:</strong>
+    <%= @estado.nome %>
+  </li>
+
+  <li>
+    <strong>Uf:</strong>
+    <%= @estado.uf %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.estado_path(@conn, :edit, @estado) %></span>
+<span><%= link "Back", to: Routes.estado_path(@conn, :index) %></span>

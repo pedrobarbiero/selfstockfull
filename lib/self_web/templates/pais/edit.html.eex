@@ -1,0 +1,5 @@
+<h1>Edit Pais</h1>
+
+<%= render "form.html", Map.put(assigns, :action, Routes.pais_path(@conn, :update, @pais)) %>
+
+<span><%= link "Back", to: Routes.pais_path(@conn, :index) %></span>

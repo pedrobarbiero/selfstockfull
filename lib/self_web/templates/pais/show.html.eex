@@ -1,0 +1,13 @@
+<h1>Show Pais</h1>
+
+<ul>
+
+  <li>
+    <strong>Nome:</strong>
+    <%= @pais.nome %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.pais_path(@conn, :edit, @pais) %></span>
+<span><%= link "Back", to: Routes.pais_path(@conn, :index) %></span>

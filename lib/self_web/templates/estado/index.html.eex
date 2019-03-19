@@ -1,0 +1,28 @@
+<h1>Listing Estados</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Uf</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for estado <- @estados do %>
+    <tr>
+      <td><%= estado.nome %></td>
+      <td><%= estado.uf %></td>
+
+      <td>
+        <%= link "Show", to: Routes.estado_path(@conn, :show, estado) %>
+        <%= link "Edit", to: Routes.estado_path(@conn, :edit, estado) %>
+        <%= link "Delete", to: Routes.estado_path(@conn, :delete, estado), method: :delete, data: [confirm: "Are you sure?"] %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Estado", to: Routes.estado_path(@conn, :new) %></span>

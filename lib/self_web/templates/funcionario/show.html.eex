@@ -1,0 +1,38 @@
+<h1>Show Funcionario</h1>
+
+<ul>
+
+  <li>
+    <strong>Nome:</strong>
+    <%= @funcionario.nome %>
+  </li>
+
+  <li>
+    <strong>Data nascimento:</strong>
+    <%= @funcionario.data_nascimento %>
+  </li>
+
+  <li>
+    <strong>Email:</strong>
+    <%= @funcionario.email %>
+  </li>
+
+  <li>
+    <strong>Cpf:</strong>
+    <%= @funcionario.cpf %>
+  </li>
+
+  <li>
+    <strong>Sexo:</strong>
+    <%= @funcionario.sexo %>
+  </li>
+
+  <li>
+    <strong>Telefone:</strong>
+    <%= @funcionario.telefone %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.funcionario_path(@conn, :edit, @funcionario) %></span>
+<span><%= link "Back", to: Routes.funcionario_path(@conn, :index) %></span>

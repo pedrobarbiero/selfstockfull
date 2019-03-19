@@ -1,0 +1,32 @@
+<h1>Listing Enderecos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Logradouro</th>
+      <th>Numero</th>
+      <th>Cep</th>
+      <th>Bairro</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for endereco <- @enderecos do %>
+    <tr>
+      <td><%= endereco.logradouro %></td>
+      <td><%= endereco.numero %></td>
+      <td><%= endereco.cep %></td>
+      <td><%= endereco.bairro %></td>
+
+      <td>
+        <%= link "Show", to: Routes.endereco_path(@conn, :show, endereco) %>
+        <%= link "Edit", to: Routes.endereco_path(@conn, :edit, endereco) %>
+        <%= link "Delete", to: Routes.endereco_path(@conn, :delete, endereco), method: :delete, data: [confirm: "Are you sure?"] %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Endereco", to: Routes.endereco_path(@conn, :new) %></span>

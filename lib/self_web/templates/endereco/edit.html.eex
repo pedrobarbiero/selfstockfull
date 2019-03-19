@@ -1,0 +1,5 @@
+<h1>Edit Endereco</h1>
+
+<%= render "form.html", Map.put(assigns, :action, Routes.endereco_path(@conn, :update, @endereco)) %>
+
+<span><%= link "Back", to: Routes.endereco_path(@conn, :index) %></span>

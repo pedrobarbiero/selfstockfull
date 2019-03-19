@@ -1,0 +1,36 @@
+<h1>Listing Clientes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Data nascimento</th>
+      <th>Email</th>
+      <th>Cpf</th>
+      <th>Sexo</th>
+      <th>Telefone</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for cliente <- @clientes do %>
+    <tr>
+      <td><%= cliente.nome %></td>
+      <td><%= cliente.data_nascimento %></td>
+      <td><%= cliente.email %></td>
+      <td><%= cliente.cpf %></td>
+      <td><%= cliente.sexo %></td>
+      <td><%= cliente.telefone %></td>
+
+      <td>
+        <%= link "Show", to: Routes.cliente_path(@conn, :show, cliente) %>
+        <%= link "Edit", to: Routes.cliente_path(@conn, :edit, cliente) %>
+        <%= link "Delete", to: Routes.cliente_path(@conn, :delete, cliente), method: :delete, data: [confirm: "Are you sure?"] %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Cliente", to: Routes.cliente_path(@conn, :new) %></span>
