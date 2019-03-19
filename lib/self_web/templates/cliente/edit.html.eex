@@ -1,5 +1,5 @@
-<h1>Edit Cliente</h1>
+<h1>Alterar Cliente</h1>
 
 <%= render "form.html", Map.put(assigns, :action, Routes.cliente_path(@conn, :update, @cliente)) %>
 
-<span><%= link "Back", to: Routes.cliente_path(@conn, :index) %></span>
+<span><%= link "Voltar", to: Routes.cliente_path(@conn, :index) %></span>

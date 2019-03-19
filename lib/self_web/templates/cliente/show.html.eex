@@ -1,4 +1,4 @@
-<h1>Show Cliente</h1>
+<h1>Cliente</h1>
 
 <ul>
 
@@ -34,5 +34,5 @@
 
 </ul>
 
-<span><%= link "Edit", to: Routes.cliente_path(@conn, :edit, @cliente) %></span>
-<span><%= link "Back", to: Routes.cliente_path(@conn, :index) %></span>
+<span><%= link "Editar", to: Routes.cliente_path(@conn, :edit, @cliente) %></span>
+<span><%= link "Voltar", to: Routes.cliente_path(@conn, :index) %></span>
