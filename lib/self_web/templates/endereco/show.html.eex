@@ -1,4 +1,4 @@
-<h1>Show Endereco</h1>
+<h1>Endereço</h1>
 
 <ul>
 
@@ -24,5 +24,5 @@
 
 </ul>
 
-<span><%= link "Edit", to: Routes.endereco_path(@conn, :edit, @endereco) %></span>
-<span><%= link "Back", to: Routes.endereco_path(@conn, :index) %></span>
+<span><%= link "Editar", to: Routes.endereco_path(@conn, :edit, @endereco) %></span>
+<span><%= link "Voltar", to: Routes.endereco_path(@conn, :index) %></span>
