@@ -1,4 +1,4 @@
-<h1>Listing Fornecedores</h1>
+<h1>Fornecedores</h1>
 
 <table>
   <thead>
@@ -24,13 +24,13 @@
       <td><%= fornecedor.inscrica_estadual %></td>
 
       <td>
-        <%= link "Show", to: Routes.fornecedor_path(@conn, :show, fornecedor) %>
-        <%= link "Edit", to: Routes.fornecedor_path(@conn, :edit, fornecedor) %>
-        <%= link "Delete", to: Routes.fornecedor_path(@conn, :delete, fornecedor), method: :delete, data: [confirm: "Are you sure?"] %>
+        <%= link "Visualizar", to: Routes.fornecedor_path(@conn, :show, fornecedor) %>
+        <%= link "Editar", to: Routes.fornecedor_path(@conn, :edit, fornecedor) %>
+        <%= link "Excluir", to: Routes.fornecedor_path(@conn, :delete, fornecedor), method: :delete, data: [confirm: "Tem certeza?"] %>
       </td>
     </tr>
 <% end %>
   </tbody>
 </table>
 
-<span><%= link "New Fornecedor", to: Routes.fornecedor_path(@conn, :new) %></span>
+<span><%= link "Novo", to: Routes.fornecedor_path(@conn, :new) %></span>

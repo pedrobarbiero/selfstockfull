@@ -1,4 +1,4 @@
-<h1>Show Fornecedor</h1>
+<h1>Visualizar Fornecedor</h1>
 
 <ul>
 
@@ -34,5 +34,5 @@
 
 </ul>
 
-<span><%= link "Edit", to: Routes.fornecedor_path(@conn, :edit, @fornecedor) %></span>
-<span><%= link "Back", to: Routes.fornecedor_path(@conn, :index) %></span>
+<span><%= link "Editar", to: Routes.fornecedor_path(@conn, :edit, @fornecedor) %></span>
+<span><%= link "Voltar", to: Routes.fornecedor_path(@conn, :index) %></span>

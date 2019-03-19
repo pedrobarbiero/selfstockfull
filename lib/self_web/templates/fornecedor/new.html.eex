@@ -1,5 +1,5 @@
-<h1>New Fornecedor</h1>
+<h1>Novo Fornecedor</h1>
 
 <%= render "form.html", Map.put(assigns, :action, Routes.fornecedor_path(@conn, :create)) %>
 
-<span><%= link "Back", to: Routes.fornecedor_path(@conn, :index) %></span>
+<span><%= link "Voltar", to: Routes.fornecedor_path(@conn, :index) %></span>
