@@ -11,11 +11,21 @@ use Mix.Config
 # before starting your production server.
 config :self, SelfWeb.Endpoint,
   http: [:inet6, port: System.get_env("PORT") || 4000],
-  url: [host: "example.com", port: 80],
+  url: [scheme: "https", host: "ancient-lake-88301.herokuapp.com", port: 443],
+  force_ssl: [rewrite_on: [:x_forwarded_proto]],
+  secret_key_base: Map.fetch!(System.get_env(), "SECRET_KEY_BASE"),
   cache_static_manifest: "priv/static/cache_manifest.json"
 
 # Do not print debug messages in production
 config :logger, level: :info
+
+config :self, Self.Repo,
+  url: System.get_env("DATABASE_URL"),
+  pool_size: String.to_integer(System.get_env("POOL_SIZE") || "10"),
+  ssl: true,
+  username: "isxsuhmlztbcur",
+  password: "5376b116bd33908076f2989386e89d96036416af853a9364fe741f39c0608aea",
+  database: "d7a8ug1a31jmbr"
 
 # ## SSL Support
 #
@@ -68,4 +78,4 @@ config :logger, level: :info
 
 # Finally import the config/prod.secret.exs which should be versioned
 # separately.
-import_config "prod.secret.exs"
+# import_config "prod.secret.exs"
