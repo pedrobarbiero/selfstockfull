@@ -1,4 +1,4 @@
-<h1>Show Funcionario</h1>
+<h1>Visualizar Funcionario</h1>
 
 <ul>
 
@@ -34,5 +34,5 @@
 
 </ul>
 
-<span><%= link "Edit", to: Routes.funcionario_path(@conn, :edit, @funcionario) %></span>
-<span><%= link "Back", to: Routes.funcionario_path(@conn, :index) %></span>
+<span><%= link "Alterar", to: Routes.funcionario_path(@conn, :edit, @funcionario) %></span>
+<span><%= link "Voltar", to: Routes.funcionario_path(@conn, :index) %></span>

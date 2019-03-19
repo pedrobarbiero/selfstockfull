@@ -1,4 +1,4 @@
-<h1>Listing Funcionarios</h1>
+<h1>Funcionarios</h1>
 
 <table>
   <thead>
@@ -24,13 +24,13 @@
       <td><%= funcionario.telefone %></td>
 
       <td>
-        <%= link "Show", to: Routes.funcionario_path(@conn, :show, funcionario) %>
-        <%= link "Edit", to: Routes.funcionario_path(@conn, :edit, funcionario) %>
-        <%= link "Delete", to: Routes.funcionario_path(@conn, :delete, funcionario), method: :delete, data: [confirm: "Are you sure?"] %>
+        <%= link "Visualizar", to: Routes.funcionario_path(@conn, :show, funcionario) %>
+        <%= link "Editar", to: Routes.funcionario_path(@conn, :edit, funcionario) %>
+        <%= link "Excluir", to: Routes.funcionario_path(@conn, :delete, funcionario), method: :delete, data: [confirm: "Tem certeza?"] %>
       </td>
     </tr>
 <% end %>
   </tbody>
 </table>
 
-<span><%= link "New Funcionario", to: Routes.funcionario_path(@conn, :new) %></span>
+<span><%= link "Novo", to: Routes.funcionario_path(@conn, :new) %></span>
