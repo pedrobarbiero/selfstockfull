@@ -1,4 +1,4 @@
-<h1>Listing Cidades</h1>
+<h1>Cidades</h1>
 
 <table>
   <thead>
@@ -14,13 +14,13 @@
       <td><%= cidade.nome %></td>
 
       <td>
-        <%= link "Show", to: Routes.cidade_path(@conn, :show, cidade) %>
-        <%= link "Edit", to: Routes.cidade_path(@conn, :edit, cidade) %>
-        <%= link "Delete", to: Routes.cidade_path(@conn, :delete, cidade), method: :delete, data: [confirm: "Are you sure?"] %>
+        <%= link "Visualizar", to: Routes.cidade_path(@conn, :show, cidade) %>
+        <%= link "Editar", to: Routes.cidade_path(@conn, :edit, cidade) %>
+        <%= link "Excluir", to: Routes.cidade_path(@conn, :delete, cidade), method: :delete, data: [confirm: "Tem certeza?"] %>
       </td>
     </tr>
 <% end %>
   </tbody>
 </table>
 
-<span><%= link "New Cidade", to: Routes.cidade_path(@conn, :new) %></span>
+<span><%= link "Novo", to: Routes.cidade_path(@conn, :new) %></span>
