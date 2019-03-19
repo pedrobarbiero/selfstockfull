@@ -16,7 +16,7 @@
       <td>
         <%= link "Visualizar", to: Routes.pais_path(@conn, :show, pais) %>
         <%= link "Editar", to: Routes.pais_path(@conn, :edit, pais) %>
-        <%= link "Excluir", to: Routes.pais_path(@conn, :delete, pais), method: :delete, data: [confirm: "Are you sure?"] %>
+        <%= link "Excluir", to: Routes.pais_path(@conn, :delete, pais), method: :delete, data: [confirm: "Tem certeza?"] %>
       </td>
     </tr>
 <% end %>

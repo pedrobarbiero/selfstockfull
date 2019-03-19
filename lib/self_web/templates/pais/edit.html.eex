@@ -1,4 +1,4 @@
-<h1>Edit Pais</h1>
+<h1>Alterar Pais</h1>
 
 <%= render "form.html", Map.put(assigns, :action, Routes.pais_path(@conn, :update, @pais)) %>
 

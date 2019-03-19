@@ -1,4 +1,4 @@
-<h1>Listing Estados</h1>
+<h1>Estados</h1>
 
 <table>
   <thead>
@@ -16,13 +16,13 @@
       <td><%= estado.uf %></td>
 
       <td>
-        <%= link "Show", to: Routes.estado_path(@conn, :show, estado) %>
-        <%= link "Edit", to: Routes.estado_path(@conn, :edit, estado) %>
-        <%= link "Delete", to: Routes.estado_path(@conn, :delete, estado), method: :delete, data: [confirm: "Are you sure?"] %>
+        <%= link "Visualizar", to: Routes.estado_path(@conn, :show, estado) %>
+        <%= link "Editar", to: Routes.estado_path(@conn, :edit, estado) %>
+        <%= link "Excluir", to: Routes.estado_path(@conn, :delete, estado), method: :delete, data: [confirm: "Tem certeza?"] %>
       </td>
     </tr>
 <% end %>
   </tbody>
 </table>
 
-<span><%= link "New Estado", to: Routes.estado_path(@conn, :new) %></span>
+<span><%= link "Novo", to: Routes.estado_path(@conn, :new) %></span>

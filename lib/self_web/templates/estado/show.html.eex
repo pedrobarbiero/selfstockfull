@@ -14,5 +14,5 @@
 
 </ul>
 
-<span><%= link "Edit", to: Routes.estado_path(@conn, :edit, @estado) %></span>
-<span><%= link "Back", to: Routes.estado_path(@conn, :index) %></span>
+<span><%= link "Editar", to: Routes.estado_path(@conn, :edit, @estado) %></span>
+<span><%= link "Voltar", to: Routes.estado_path(@conn, :index) %></span>
