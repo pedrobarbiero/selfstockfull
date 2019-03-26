@@ -15,7 +15,7 @@ defmodule Self.Movimentacao.Venda do
   @doc false
   def changeset(venda, attrs) do
     venda
-    |> cast(attrs, [:valor, :data, :desconto])
-    |> validate_required([:valor, :data, :desconto])
+    |> cast(attrs, [:valor, :data, :desconto, :funcionario_id, :cliente_id])
+    |> validate_required([:data, :desconto, :funcionario_id, :cliente_id])
   end
 end

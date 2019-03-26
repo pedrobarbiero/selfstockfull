@@ -5,8 +5,8 @@
     </div>
   <% end %>
 
-  <%= label f, :valor %>
-  <%= number_input f, :valor, step: "any" %>
+  <%# <%= label f, :valor %>
+  <%# <%= number_input f, :valor, step: "any" %>
   <%= error_tag f, :valor %>
 
   <%= label f, :data %>
