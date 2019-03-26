@@ -1,4 +1,4 @@
-<h1>Show Item compra</h1>
+<h1>Item de compra</h1>
 
 <ul>
 
@@ -14,5 +14,5 @@
 
 </ul>
 
-<span><%= link "Edit", to: Routes.item_compra_path(@conn, :edit, @item_compra) %></span>
-<span><%= link "Back", to: Routes.item_compra_path(@conn, :index) %></span>
+<span><%= link "Alterar", to: Routes.item_compra_path(@conn, :edit, @item_compra) %></span>
+<span><%= link "Voltar", to: Routes.item_compra_path(@conn, :index) %></span>

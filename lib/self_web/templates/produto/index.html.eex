@@ -1,4 +1,4 @@
-<h1>Listing Produtos</h1>
+<h1>Produtos</h1>
 
 <table>
   <thead>
@@ -22,13 +22,13 @@
       <td><%= produto.tipo %></td>
 
       <td>
-        <%= link "Show", to: Routes.produto_path(@conn, :show, produto) %>
-        <%= link "Edit", to: Routes.produto_path(@conn, :edit, produto) %>
-        <%= link "Delete", to: Routes.produto_path(@conn, :delete, produto), method: :delete, data: [confirm: "Are you sure?"] %>
+        <%= link "Visualizar", to: Routes.produto_path(@conn, :show, produto) %>
+        <%= link "Alterar", to: Routes.produto_path(@conn, :edit, produto) %>
+        <%= link "Excluir", to: Routes.produto_path(@conn, :delete, produto), method: :delete, data: [confirm: "Tem certeza?"] %>
       </td>
     </tr>
 <% end %>
   </tbody>
 </table>
 
-<span><%= link "New Produto", to: Routes.produto_path(@conn, :new) %></span>
+<span><%= link "Novo Produto", to: Routes.produto_path(@conn, :new) %></span>

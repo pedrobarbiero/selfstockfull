@@ -1,4 +1,4 @@
-<h1>Listing Compras</h1>
+<h1>Compras</h1>
 
 <table>
   <thead>
@@ -22,13 +22,13 @@
       <td><%= compra.vencimento %></td>
 
       <td>
-        <%= link "Show", to: Routes.compra_path(@conn, :show, compra) %>
-        <%= link "Edit", to: Routes.compra_path(@conn, :edit, compra) %>
-        <%= link "Delete", to: Routes.compra_path(@conn, :delete, compra), method: :delete, data: [confirm: "Are you sure?"] %>
+        <%= link "Visualizar", to: Routes.compra_path(@conn, :show, compra) %>
+        <%= link "Alterar", to: Routes.compra_path(@conn, :edit, compra) %>
+        <%= link "Excluir", to: Routes.compra_path(@conn, :delete, compra), method: :delete, data: [confirm: "Tem certeza?"] %>
       </td>
     </tr>
 <% end %>
   </tbody>
 </table>
 
-<span><%= link "New Compra", to: Routes.compra_path(@conn, :new) %></span>
+<span><%= link "Nova Compra", to: Routes.compra_path(@conn, :new) %></span>

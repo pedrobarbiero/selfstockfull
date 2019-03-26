@@ -1,5 +1,5 @@
-<h1>Edit Item venda</h1>
+<h1>Alterar Item de venda</h1>
 
 <%= render "form.html", Map.put(assigns, :action, Routes.item_venda_path(@conn, :update, @item_venda)) %>
 
-<span><%= link "Back", to: Routes.item_venda_path(@conn, :index) %></span>
+<span><%= link "Votlar", to: Routes.item_venda_path(@conn, :index) %></span>

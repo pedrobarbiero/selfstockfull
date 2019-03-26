@@ -1,4 +1,4 @@
-<h1>Listing Itens venda</h1>
+<h1>Itens de Venda</h1>
 
 <table>
   <thead>
@@ -14,13 +14,13 @@
       <td><%= item_venda.quantidade %></td>
 
       <td>
-        <%= link "Show", to: Routes.item_venda_path(@conn, :show, item_venda) %>
-        <%= link "Edit", to: Routes.item_venda_path(@conn, :edit, item_venda) %>
-        <%= link "Delete", to: Routes.item_venda_path(@conn, :delete, item_venda), method: :delete, data: [confirm: "Are you sure?"] %>
+        <%= link "Exibir", to: Routes.item_venda_path(@conn, :show, item_venda) %>
+        <%= link "Alterar", to: Routes.item_venda_path(@conn, :edit, item_venda) %>
+        <%= link "Excluir", to: Routes.item_venda_path(@conn, :delete, item_venda), method: :delete, data: [confirm: "Tem certeza?"] %>
       </td>
     </tr>
 <% end %>
   </tbody>
 </table>
 
-<span><%= link "New Item venda", to: Routes.item_venda_path(@conn, :new) %></span>
+<span><%= link "Novo Item de Venda", to: Routes.item_venda_path(@conn, :new) %></span>

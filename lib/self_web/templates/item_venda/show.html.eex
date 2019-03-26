@@ -1,4 +1,4 @@
-<h1>Show Item venda</h1>
+<h1>Visualizar Item de Venda</h1>
 
 <ul>
 
@@ -9,5 +9,5 @@
 
 </ul>
 
-<span><%= link "Edit", to: Routes.item_venda_path(@conn, :edit, @item_venda) %></span>
-<span><%= link "Back", to: Routes.item_venda_path(@conn, :index) %></span>
+<span><%= link "Alterar", to: Routes.item_venda_path(@conn, :edit, @item_venda) %></span>
+<span><%= link "Voltar", to: Routes.item_venda_path(@conn, :index) %></span>

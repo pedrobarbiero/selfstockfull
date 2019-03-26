@@ -1,4 +1,4 @@
-<h1>Listing Vendas</h1>
+<h1>Vendas</h1>
 
 <table>
   <thead>
@@ -18,13 +18,13 @@
       <td><%= venda.desconto %></td>
 
       <td>
-        <%= link "Show", to: Routes.venda_path(@conn, :show, venda) %>
-        <%= link "Edit", to: Routes.venda_path(@conn, :edit, venda) %>
-        <%= link "Delete", to: Routes.venda_path(@conn, :delete, venda), method: :delete, data: [confirm: "Are you sure?"] %>
+        <%= link "Visualizar", to: Routes.venda_path(@conn, :show, venda) %>
+        <%= link "Editar", to: Routes.venda_path(@conn, :edit, venda) %>
+        <%= link "Excluir", to: Routes.venda_path(@conn, :delete, venda), method: :delete, data: [confirm: "Tem certeza?"] %>
       </td>
     </tr>
 <% end %>
   </tbody>
 </table>
 
-<span><%= link "New Venda", to: Routes.venda_path(@conn, :new) %></span>
+<span><%= link "Nova Venda", to: Routes.venda_path(@conn, :new) %></span>

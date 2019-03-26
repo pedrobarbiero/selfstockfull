@@ -1,4 +1,4 @@
-<h1>Show Compra</h1>
+<h1>Compra</h1>
 
 <ul>
 
@@ -29,5 +29,5 @@
 
 </ul>
 
-<span><%= link "Edit", to: Routes.compra_path(@conn, :edit, @compra) %></span>
-<span><%= link "Back", to: Routes.compra_path(@conn, :index) %></span>
+<span><%= link "Alterar", to: Routes.compra_path(@conn, :edit, @compra) %></span>
+<span><%= link "Voltar", to: Routes.compra_path(@conn, :index) %></span>

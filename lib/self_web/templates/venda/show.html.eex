@@ -1,4 +1,4 @@
-<h1>Show Venda</h1>
+<h1>Visualizar Venda</h1>
 
 <ul>
 
@@ -19,5 +19,5 @@
 
 </ul>
 
-<span><%= link "Edit", to: Routes.venda_path(@conn, :edit, @venda) %></span>
-<span><%= link "Back", to: Routes.venda_path(@conn, :index) %></span>
+<span><%= link "Alterar", to: Routes.venda_path(@conn, :edit, @venda) %></span>
+<span><%= link "Voltar", to: Routes.venda_path(@conn, :index) %></span>

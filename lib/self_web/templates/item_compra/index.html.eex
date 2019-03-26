@@ -1,4 +1,4 @@
-<h1>Listing Itens compra</h1>
+<h1>Itens de compra</h1>
 
 <table>
   <thead>
@@ -16,13 +16,13 @@
       <td><%= item_compra.valor_unitario %></td>
 
       <td>
-        <%= link "Show", to: Routes.item_compra_path(@conn, :show, item_compra) %>
-        <%= link "Edit", to: Routes.item_compra_path(@conn, :edit, item_compra) %>
-        <%= link "Delete", to: Routes.item_compra_path(@conn, :delete, item_compra), method: :delete, data: [confirm: "Are you sure?"] %>
+        <%= link "Visualizar", to: Routes.item_compra_path(@conn, :show, item_compra) %>
+        <%= link "Alterar", to: Routes.item_compra_path(@conn, :edit, item_compra) %>
+        <%= link "Excluir", to: Routes.item_compra_path(@conn, :delete, item_compra), method: :delete, data: [confirm: "Tem certeza?"] %>
       </td>
     </tr>
 <% end %>
   </tbody>
 </table>
 
-<span><%= link "New Item compra", to: Routes.item_compra_path(@conn, :new) %></span>
+<span><%= link "Novo Item de compra", to: Routes.item_compra_path(@conn, :new) %></span>

@@ -1,4 +1,4 @@
-<h1>Show Produto</h1>
+<h1>Produto</h1>
 
 <ul>
 
@@ -29,5 +29,5 @@
 
 </ul>
 
-<span><%= link "Edit", to: Routes.produto_path(@conn, :edit, @produto) %></span>
-<span><%= link "Back", to: Routes.produto_path(@conn, :index) %></span>
+<span><%= link "Alterar", to: Routes.produto_path(@conn, :edit, @produto) %></span>
+<span><%= link "Voltar", to: Routes.produto_path(@conn, :index) %></span>

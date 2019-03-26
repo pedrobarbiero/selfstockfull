@@ -1,5 +1,5 @@
-<h1>New Item compra</h1>
+<h1>Novo Item compra</h1>
 
 <%= render "form.html", Map.put(assigns, :action, Routes.item_compra_path(@conn, :create)) %>
 
-<span><%= link "Back", to: Routes.item_compra_path(@conn, :index) %></span>
+<span><%= link "Voltar", to: Routes.item_compra_path(@conn, :index) %></span>
