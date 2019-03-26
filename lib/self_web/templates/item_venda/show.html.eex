@@ -1,0 +1,13 @@
+<h1>Show Item venda</h1>
+
+<ul>
+
+  <li>
+    <strong>Quantidade:</strong>
+    <%= @item_venda.quantidade %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.item_venda_path(@conn, :edit, @item_venda) %></span>
+<span><%= link "Back", to: Routes.item_venda_path(@conn, :index) %></span>

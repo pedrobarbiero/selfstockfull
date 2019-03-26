@@ -1,0 +1,23 @@
+<h1>Show Venda</h1>
+
+<ul>
+
+  <li>
+    <strong>Valor:</strong>
+    <%= @venda.valor %>
+  </li>
+
+  <li>
+    <strong>Data:</strong>
+    <%= @venda.data %>
+  </li>
+
+  <li>
+    <strong>Desconto:</strong>
+    <%= @venda.desconto %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.venda_path(@conn, :edit, @venda) %></span>
+<span><%= link "Back", to: Routes.venda_path(@conn, :index) %></span>

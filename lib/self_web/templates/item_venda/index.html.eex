@@ -1,0 +1,26 @@
+<h1>Listing Itens venda</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Quantidade</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for item_venda <- @itens_venda do %>
+    <tr>
+      <td><%= item_venda.quantidade %></td>
+
+      <td>
+        <%= link "Show", to: Routes.item_venda_path(@conn, :show, item_venda) %>
+        <%= link "Edit", to: Routes.item_venda_path(@conn, :edit, item_venda) %>
+        <%= link "Delete", to: Routes.item_venda_path(@conn, :delete, item_venda), method: :delete, data: [confirm: "Are you sure?"] %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Item venda", to: Routes.item_venda_path(@conn, :new) %></span>

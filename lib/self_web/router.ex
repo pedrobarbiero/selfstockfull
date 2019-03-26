@@ -28,6 +28,8 @@ defmodule SelfWeb.Router do
     resources "/produtos", ProdutoController
     resources "/compras", CompraController
     resources "/itens_compra", ItemCompraController
+    resources "/vendas", VendaController
+    resources "/itens_venda", ItemVendaController
   end
 
   # Other scopes may use custom stacks.

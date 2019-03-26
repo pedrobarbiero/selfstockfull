@@ -1,0 +1,30 @@
+<h1>Listing Vendas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Valor</th>
+      <th>Data</th>
+      <th>Desconto</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for venda <- @vendas do %>
+    <tr>
+      <td><%= venda.valor %></td>
+      <td><%= venda.data %></td>
+      <td><%= venda.desconto %></td>
+
+      <td>
+        <%= link "Show", to: Routes.venda_path(@conn, :show, venda) %>
+        <%= link "Edit", to: Routes.venda_path(@conn, :edit, venda) %>
+        <%= link "Delete", to: Routes.venda_path(@conn, :delete, venda), method: :delete, data: [confirm: "Are you sure?"] %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Venda", to: Routes.venda_path(@conn, :new) %></span>

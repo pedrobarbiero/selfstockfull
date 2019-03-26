@@ -197,4 +197,196 @@ defmodule Self.Movimentacao do
   def change_item_compra(%ItemCompra{} = item_compra) do
     ItemCompra.changeset(item_compra, %{})
   end
+
+  alias Self.Movimentacao.Venda
+
+  @doc """
+  Returns the list of vendas.
+
+  ## Examples
+
+      iex> list_vendas()
+      [%Venda{}, ...]
+
+  """
+  def list_vendas do
+    Repo.all(Venda)
+  end
+
+  @doc """
+  Gets a single venda.
+
+  Raises `Ecto.NoResultsError` if the Venda does not exist.
+
+  ## Examples
+
+      iex> get_venda!(123)
+      %Venda{}
+
+      iex> get_venda!(456)
+      ** (Ecto.NoResultsError)
+
+  """
+  def get_venda!(id), do: Repo.get!(Venda, id)
+
+  @doc """
+  Creates a venda.
+
+  ## Examples
+
+      iex> create_venda(%{field: value})
+      {:ok, %Venda{}}
+
+      iex> create_venda(%{field: bad_value})
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def create_venda(attrs \\ %{}) do
+    %Venda{}
+    |> Venda.changeset(attrs)
+    |> Repo.insert()
+  end
+
+  @doc """
+  Updates a venda.
+
+  ## Examples
+
+      iex> update_venda(venda, %{field: new_value})
+      {:ok, %Venda{}}
+
+      iex> update_venda(venda, %{field: bad_value})
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def update_venda(%Venda{} = venda, attrs) do
+    venda
+    |> Venda.changeset(attrs)
+    |> Repo.update()
+  end
+
+  @doc """
+  Deletes a Venda.
+
+  ## Examples
+
+      iex> delete_venda(venda)
+      {:ok, %Venda{}}
+
+      iex> delete_venda(venda)
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def delete_venda(%Venda{} = venda) do
+    Repo.delete(venda)
+  end
+
+  @doc """
+  Returns an `%Ecto.Changeset{}` for tracking venda changes.
+
+  ## Examples
+
+      iex> change_venda(venda)
+      %Ecto.Changeset{source: %Venda{}}
+
+  """
+  def change_venda(%Venda{} = venda) do
+    Venda.changeset(venda, %{})
+  end
+
+  alias Self.Movimentacao.ItemVenda
+
+  @doc """
+  Returns the list of itens_venda.
+
+  ## Examples
+
+      iex> list_itens_venda()
+      [%ItemVenda{}, ...]
+
+  """
+  def list_itens_venda do
+    Repo.all(ItemVenda)
+  end
+
+  @doc """
+  Gets a single item_venda.
+
+  Raises `Ecto.NoResultsError` if the Item venda does not exist.
+
+  ## Examples
+
+      iex> get_item_venda!(123)
+      %ItemVenda{}
+
+      iex> get_item_venda!(456)
+      ** (Ecto.NoResultsError)
+
+  """
+  def get_item_venda!(id), do: Repo.get!(ItemVenda, id)
+
+  @doc """
+  Creates a item_venda.
+
+  ## Examples
+
+      iex> create_item_venda(%{field: value})
+      {:ok, %ItemVenda{}}
+
+      iex> create_item_venda(%{field: bad_value})
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def create_item_venda(attrs \\ %{}) do
+    %ItemVenda{}
+    |> ItemVenda.changeset(attrs)
+    |> Repo.insert()
+  end
+
+  @doc """
+  Updates a item_venda.
+
+  ## Examples
+
+      iex> update_item_venda(item_venda, %{field: new_value})
+      {:ok, %ItemVenda{}}
+
+      iex> update_item_venda(item_venda, %{field: bad_value})
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def update_item_venda(%ItemVenda{} = item_venda, attrs) do
+    item_venda
+    |> ItemVenda.changeset(attrs)
+    |> Repo.update()
+  end
+
+  @doc """
+  Deletes a ItemVenda.
+
+  ## Examples
+
+      iex> delete_item_venda(item_venda)
+      {:ok, %ItemVenda{}}
+
+      iex> delete_item_venda(item_venda)
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def delete_item_venda(%ItemVenda{} = item_venda) do
+    Repo.delete(item_venda)
+  end
+
+  @doc """
+  Returns an `%Ecto.Changeset{}` for tracking item_venda changes.
+
+  ## Examples
+
+      iex> change_item_venda(item_venda)
+      %Ecto.Changeset{source: %ItemVenda{}}
+
+  """
+  def change_item_venda(%ItemVenda{} = item_venda) do
+    ItemVenda.changeset(item_venda, %{})
+  end
 end
