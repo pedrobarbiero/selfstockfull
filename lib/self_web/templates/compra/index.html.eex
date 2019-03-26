@@ -1,0 +1,34 @@
+<h1>Listing Compras</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Numero</th>
+      <th>Data</th>
+      <th>Icms</th>
+      <th>Desconto</th>
+      <th>Vencimento</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for compra <- @compras do %>
+    <tr>
+      <td><%= compra.numero %></td>
+      <td><%= compra.data %></td>
+      <td><%= compra.icms %></td>
+      <td><%= compra.desconto %></td>
+      <td><%= compra.vencimento %></td>
+
+      <td>
+        <%= link "Show", to: Routes.compra_path(@conn, :show, compra) %>
+        <%= link "Edit", to: Routes.compra_path(@conn, :edit, compra) %>
+        <%= link "Delete", to: Routes.compra_path(@conn, :delete, compra), method: :delete, data: [confirm: "Are you sure?"] %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Compra", to: Routes.compra_path(@conn, :new) %></span>

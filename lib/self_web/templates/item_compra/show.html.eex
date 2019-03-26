@@ -1,0 +1,18 @@
+<h1>Show Item compra</h1>
+
+<ul>
+
+  <li>
+    <strong>Quantidade:</strong>
+    <%= @item_compra.quantidade %>
+  </li>
+
+  <li>
+    <strong>Valor unitario:</strong>
+    <%= @item_compra.valor_unitario %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.item_compra_path(@conn, :edit, @item_compra) %></span>
+<span><%= link "Back", to: Routes.item_compra_path(@conn, :index) %></span>
