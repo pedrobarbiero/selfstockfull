@@ -17,7 +17,8 @@
             <%= if @conn.assigns[:user] do %>          
             <%= link "Logout", to: Routes.auth_path(@conn, :logout, "facebook") %>            
             <%= else %>
-            <%= link "Login", to: Routes.auth_path(@conn, :request, "facebook") %>                        
+            <%= link "Login com Facebook", to: Routes.auth_path(@conn, :request, "facebook") %>                        
+            <%= link "Login com GitHub", to: Routes.auth_path(@conn, :request, "github") %>                        
             <%= end %>
             </li>
           </ul>
