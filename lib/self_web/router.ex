@@ -32,6 +32,13 @@ defmodule SelfWeb.Router do
     resources "/itens_venda", ItemVendaController
   end
 
+  scope "/auth", SelfWeb do
+    pipe_through :browser
+
+    get "/:provider", AuthController, :request
+    get "/:provider/callback", AuthController, :callback
+  end
+
   # Other scopes may use custom stacks.
   # scope "/api", SelfWeb do
   #   pipe_through :api
