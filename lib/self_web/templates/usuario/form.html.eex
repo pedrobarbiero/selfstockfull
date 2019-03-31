@@ -21,6 +21,10 @@
   <%= text_input f, :token %>
   <%= error_tag f, :token %>
 
+   <%= label f, :funcionario_id %>
+   <%= select f, :funcionario_id, @funcionarios %>
+   <%= error_tag f, :funcionario_id %>
+
   <div>
     <%= submit "Save" %>
   </div>

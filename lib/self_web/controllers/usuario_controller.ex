@@ -11,7 +11,8 @@ defmodule SelfWeb.UsuarioController do
 
   def new(conn, _params) do
     changeset = Ator.change_usuario(%Usuario{})
-    render(conn, "new.html", changeset: changeset)
+    funcionarios = Ator.select_funcionarios()
+    render(conn, "new.html", changeset: changeset, funcionarios: funcionarios)
   end
 
   def create(conn, %{"usuario" => usuario_params}) do
@@ -22,7 +23,8 @@ defmodule SelfWeb.UsuarioController do
         |> redirect(to: Routes.usuario_path(conn, :show, usuario))
 
       {:error, %Ecto.Changeset{} = changeset} ->
-        render(conn, "new.html", changeset: changeset)
+        funcionarios = Ator.select_funcionarios()
+        render(conn, "new.html", changeset: changeset, funcionarios: funcionarios)
     end
   end
 
@@ -34,7 +36,8 @@ defmodule SelfWeb.UsuarioController do
   def edit(conn, %{"id" => id}) do
     usuario = Ator.get_usuario!(id)
     changeset = Ator.change_usuario(usuario)
-    render(conn, "edit.html", usuario: usuario, changeset: changeset)
+    funcionarios = Ator.select_funcionarios()
+    render(conn, "edit.html", usuario: usuario, changeset: changeset, funcionarios: funcionarios)
   end
 
   def update(conn, %{"id" => id, "usuario" => usuario_params}) do

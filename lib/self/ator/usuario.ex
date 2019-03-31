@@ -7,6 +7,7 @@ defmodule Self.Ator.Usuario do
     field :nome, :string
     field :provider, :string
     field :token, :string
+    belongs_to(:funcionarios, Self.Ator.Funcionario, [foreign_key: :funcionario_id])
 
     timestamps()
   end
@@ -15,7 +16,7 @@ defmodule Self.Ator.Usuario do
   def changeset(usuario, attrs) do
     IO.puts "entro 3"
     usuario
-    |> cast(attrs, [:nome, :provider, :email, :token])
-    |> validate_required([:nome, :provider, :email, :token])
+    |> cast(attrs, [:nome, :provider, :email, :token, :funcionario_id])
+    |> validate_required([:nome, :provider, :email, :token, :funcionario_id])
   end
 end

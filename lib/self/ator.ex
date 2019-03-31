@@ -397,4 +397,9 @@ defmodule Self.Ator do
       usuario -> {:ok, usuario}
     end
   end
+
+  def select_funcionarios do
+    Repo.all(Funcionario)
+    |> Enum.map(&{"#{&1.nome}", &1.id})
+  end
 end
