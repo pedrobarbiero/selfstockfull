@@ -42,8 +42,10 @@ config :ueberauth, Ueberauth.Strategy.Google.OAuth,
   client_secret: "typQc8_Nzv0PUnXZL4vSneoD"
 
 config :ueberauth, Ueberauth.Strategy.Facebook.OAuth,
-  client_id: "606476336486601",
-  client_secret: "c9b1a2b913707c2a83f5a2dd7ae376cf"
+  client_id: "357802244825104",
+  client_secret: "726e9eecba8776eaac9af9987bf6cd37"
+  # client_id: "606476336486601",
+  # client_secret: "c9b1a2b913707c2a83f5a2dd7ae376cf"
 
 config :ueberauth, Ueberauth.Strategy.Github.OAuth,
   client_id: "41fc68cc81780eb0fe50",

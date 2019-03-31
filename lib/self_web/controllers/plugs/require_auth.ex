@@ -15,7 +15,7 @@ defmodule SelfWeb.Plug.RequireAuth do
       conn
     else
       conn
-      |> Phoenix.Controller.put_flash(:error, "Necessario estar logado")
+      |> Phoenix.Controller.put_flash(:error, "Sem permissão")
       |> redirect(to: "/")
       |> halt()
     end
