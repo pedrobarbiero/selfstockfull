@@ -13,6 +13,13 @@
         <nav role="navigation">
           <ul>
             <li><a href="https://hexdocs.pm/phoenix/overview.html">Get Started</a></li>
+            <li>
+            <%= if @conn.assigns[:user] do %>          
+            <%= link "Logout", to: Routes.auth_path(@conn, :logout, "facebook") %>            
+            <%= else %>
+            <%= link "Login", to: Routes.auth_path(@conn, :request, "facebook") %>                        
+            <%= end %>
+            </li>
           </ul>
         </nav>
         <a href="http://phoenixframework.org/" class="phx-logo">

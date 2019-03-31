@@ -1,0 +1,28 @@
+<h1>Show Usuario</h1>
+
+<ul>
+
+  <li>
+    <strong>Nome:</strong>
+    <%= @usuario.nome %>
+  </li>
+
+  <li>
+    <strong>Provider:</strong>
+    <%= @usuario.provider %>
+  </li>
+
+  <li>
+    <strong>Email:</strong>
+    <%= @usuario.email %>
+  </li>
+
+  <li>
+    <strong>Token:</strong>
+    <%= @usuario.token %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.usuario_path(@conn, :edit, @usuario) %></span>
+<span><%= link "Back", to: Routes.usuario_path(@conn, :index) %></span>

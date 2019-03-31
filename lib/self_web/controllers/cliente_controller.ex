@@ -5,6 +5,8 @@ defmodule SelfWeb.ClienteController do
   alias Self.Localizacao
   alias Self.Ator.Cliente
 
+  plug SelfWeb.Plug.RequireAuth when action in [:index, :edit, :new, :show, :create, :update, :delete]
+
   def index(conn, _params) do
     clientes = Ator.list_clientes()
     render(conn, "index.html", clientes: clientes)

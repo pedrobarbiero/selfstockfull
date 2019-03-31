@@ -7,6 +7,7 @@ defmodule SelfWeb.Router do
     plug :fetch_flash
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+    plug SelfWeb.Plug.SetUser
   end
 
   pipeline :api do
@@ -30,6 +31,7 @@ defmodule SelfWeb.Router do
     resources "/itens_compra", ItemCompraController
     resources "/vendas", VendaController
     resources "/itens_venda", ItemVendaController
+    resources "/usuarios", UsuarioController
   end
 
   scope "/auth", SelfWeb do
@@ -37,6 +39,7 @@ defmodule SelfWeb.Router do
 
     get "/:provider", AuthController, :request
     get "/:provider/callback", AuthController, :callback
+    get "/:provider/logout", AuthController, :logout
   end
 
   # Other scopes may use custom stacks.
