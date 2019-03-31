@@ -14,7 +14,6 @@ defmodule Self.Ator.Usuario do
 
   @doc false
   def changeset(usuario, attrs) do
-    IO.puts "entro 3"
     usuario
     |> cast(attrs, [:nome, :provider, :email, :token, :funcionario_id])
     |> validate_required([:nome, :provider, :email, :token, :funcionario_id])

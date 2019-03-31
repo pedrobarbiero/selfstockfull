@@ -3,18 +3,12 @@ defmodule SelfWeb.AuthController do
   plug Ueberauth
 
   def callback(%{assigns: %{ueberauth_auth: auth}} = conn, %{"provider" => provider}) do
-    IO.puts "inicio CALLBACK ---------"
-    IO.inspect auth
-    IO.puts "FIM CALL BACK ---"
     usuario = %{
       nome: auth.info.name,
       email: auth.info.email,
       provider: provider,
       token: auth.credentials.token
     }
-
-    IO.inspect usuario
-    IO.puts "FIM USUARIO-----------"
 
     case Self.Ator.change_create_usuario(usuario) do
       {:ok, usuario} ->

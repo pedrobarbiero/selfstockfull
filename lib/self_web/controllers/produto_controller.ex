@@ -7,10 +7,6 @@ defmodule SelfWeb.ProdutoController do
   plug SelfWeb.Plug.RequireAuth when action in [:index, :edit, :new, :show, :create, :update, :delete]
 
   def index(conn, _params) do
-    IO.puts "INICIO---- ASSIGNS-------------------"
-    IO.inspect conn.assigns
-    IO.puts "FIM ---ASSIGNS----------"
-
     produtos = Estoque.list_produtos()
     render(conn, "index.html", produtos: produtos)
   end

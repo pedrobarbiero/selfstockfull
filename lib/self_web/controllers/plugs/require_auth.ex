@@ -8,9 +8,6 @@ defmodule SelfWeb.Plug.RequireAuth do
 
   def call(conn, _params) do
     user = conn.assigns[:user]
-    IO.puts "ASSIGNS USER"
-    IO.inspect user
-    IO.puts "ASSIGNS fim USER"
     if (conn.assigns[:user]) do
       conn
     else
