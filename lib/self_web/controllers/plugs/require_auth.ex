@@ -1,13 +1,11 @@
 defmodule SelfWeb.Plug.RequireAuth do
   import Plug.Conn
   import Phoenix.Controller
-  # alias SelfWeb.Router.Helpers
 
   def init(_params) do
   end
 
   def call(conn, _params) do
-    user = conn.assigns[:user]
     if (conn.assigns[:user]) do
       conn
     else
