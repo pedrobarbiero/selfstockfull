@@ -4,6 +4,8 @@ defmodule SelfWeb.CidadeController do
   alias Self.Localizacao
   alias Self.Localizacao.Cidade
 
+  plug SelfWeb.Plug.RequireAuth when action in [:index, :edit, :new, :show, :create, :update, :delete]
+
   def index(conn, _params) do
     cidades = Localizacao.list_cidades()
     render(conn, "index.html", cidades: cidades)

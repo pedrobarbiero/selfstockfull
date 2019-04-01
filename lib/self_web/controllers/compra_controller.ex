@@ -4,6 +4,8 @@ defmodule SelfWeb.CompraController do
   alias Self.Movimentacao
   alias Self.Movimentacao.Compra
 
+  plug SelfWeb.Plug.RequireAuth when action in [:index, :edit, :new, :show, :create, :update, :delete]
+
   def index(conn, _params) do
     compras = Movimentacao.list_compras()
     render(conn, "index.html", compras: compras)

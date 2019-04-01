@@ -4,6 +4,8 @@ defmodule SelfWeb.EnderecoController do
   alias Self.Localizacao
   alias Self.Localizacao.Endereco
 
+  plug SelfWeb.Plug.RequireAuth when action in [:index, :edit, :new, :show, :create, :update, :delete]
+
   def index(conn, _params) do
     enderecos = Localizacao.list_enderecos()
     render(conn, "index.html", enderecos: enderecos)

@@ -5,6 +5,8 @@ defmodule SelfWeb.FornecedorController do
   alias Self.Ator.Fornecedor
   alias Self.Localizacao
 
+  plug SelfWeb.Plug.RequireAuth when action in [:index, :edit, :new, :show, :create, :update, :delete]
+
   def index(conn, _params) do
     fornecedores = Ator.list_fornecedores()
     render(conn, "index.html", fornecedores: fornecedores)

@@ -4,6 +4,8 @@ defmodule SelfWeb.ItemVendaController do
   alias Self.Movimentacao
   alias Self.Movimentacao.ItemVenda
 
+  plug SelfWeb.Plug.RequireAuth when action in [:index, :edit, :new, :show, :create, :update, :delete]
+
   def index(conn, _params) do
     itens_venda = Movimentacao.list_itens_venda()
     render(conn, "index.html", itens_venda: itens_venda)

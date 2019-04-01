@@ -4,28 +4,60 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>Self · Phoenix Framework</title>
     <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
   </head>
   <body>
     <header>
       <section class="container">
-        <nav role="navigation">
-          <ul>
-            <li><a href="https://hexdocs.pm/phoenix/overview.html">Get Started</a></li>
-            <li>
-            <%= if @conn.assigns[:user] do %>          
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">  
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">      
+    <li class="nav-item">
+        <%= link "Pais", to: Routes.pais_path(@conn, :index) %>   
+      </li>
+      <li class="nav-item">
+        <%= link "Estado", to: Routes.estado_path(@conn, :index) %>   
+      </li>
+      <li class="nav-item">
+        <%= link "Cidade", to: Routes.cidade_path(@conn, :index) %>   
+      </li>
+      <li class="nav-item">
+        <%= link "Endereço", to: Routes.endereco_path(@conn, :index) %>   
+      </li>
+      <li class="nav-item">
+        <%= link "Cliente", to: Routes.cliente_path(@conn, :index) %>   
+      </li>
+      <li class="nav-item">
+        <%= link "Fornecedor", to: Routes.fornecedor_path(@conn, :index) %>   
+      </li>
+      <li class="nav-item">
+        <%= link "Funcionario", to: Routes.funcionario_path(@conn, :index) %>   
+      </li>
+      <li class="nav-item">
+        <%= link "Produto", to: Routes.produto_path(@conn, :index) %>   
+      </li>
+      <li class="nav-item">
+        <%= link "Compra", to: Routes.compra_path(@conn, :index) %>   
+      </li>
+      <li class="nav-item">
+        <%= link "Venda", to: Routes.venda_path(@conn, :index) %>   
+      </li>
+      <li class="nav-item">
+        <%= link "SelfStock", to: Routes.venda_path(@conn, :index) %>   
+      </li>
+      <li>
+          <%= if @conn.assigns[:user] do %>          
             <%= link "Logout", to: Routes.auth_path(@conn, :logout, "facebook") %>            
-            <%= else %>
+          <%= else %>
             <%= link "Login com Facebook", to: Routes.auth_path(@conn, :request, "facebook") %>                        
             <%= link "Login com GitHub", to: Routes.auth_path(@conn, :request, "github") %>                        
-            <%= end %>
-            </li>
-          </ul>
-        </nav>
-        <a href="http://phoenixframework.org/" class="phx-logo">
-          <img src="<%= Routes.static_path(@conn, "/images/phoenix.png") %>" alt="Phoenix Framework Logo"/>
-        </a>
+          <%= end %>
+      </li>
+    </ul>
+  </div>
+</nav>
       </section>
     </header>
     <main role="main" class="container">

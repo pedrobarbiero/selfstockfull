@@ -4,6 +4,8 @@ defmodule SelfWeb.PaisController do
   alias Self.Localizacao
   alias Self.Localizacao.Pais
 
+  plug SelfWeb.Plug.RequireAuth when action in [:index, :edit, :new, :show, :create, :update, :delete]
+
   def index(conn, _params) do
     paises = Localizacao.list_paises()
     render(conn, "index.html", paises: paises)

@@ -5,6 +5,8 @@ defmodule SelfWeb.FuncionarioController do
   alias Self.Ator.Funcionario
   alias Self.Localizacao
 
+  plug SelfWeb.Plug.RequireAuth when action in [:index, :edit, :new, :show, :create, :update, :delete]
+
   def index(conn, _params) do
     funcionarios = Ator.list_funcionarios()
     render(conn, "index.html", funcionarios: funcionarios)

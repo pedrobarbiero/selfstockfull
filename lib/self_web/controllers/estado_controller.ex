@@ -4,6 +4,8 @@ defmodule SelfWeb.EstadoController do
   alias Self.Localizacao
   alias Self.Localizacao.Estado
 
+    plug SelfWeb.Plug.RequireAuth when action in [:index, :edit, :new, :show, :create, :update, :delete]
+
   def index(conn, _params) do
     estados = Localizacao.list_estados()
     render(conn, "index.html", estados: estados)

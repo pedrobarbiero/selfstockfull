@@ -4,6 +4,8 @@ defmodule SelfWeb.UsuarioController do
   alias Self.Ator
   alias Self.Ator.Usuario
 
+  plug SelfWeb.Plug.RequireAuth when action in [:index, :edit, :new, :show, :create, :update, :delete]
+
   def index(conn, _params) do
     usuarios = Ator.list_usuarios()
     render(conn, "index.html", usuarios: usuarios)
