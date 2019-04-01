@@ -69,4 +69,5 @@ defmodule SelfWeb.VendaController do
     |> put_flash(:info, "Venda excluido com sucesso.")
     |> redirect(to: Routes.venda_path(conn, :index))
   end
+
 end

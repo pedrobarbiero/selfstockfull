@@ -32,6 +32,7 @@ defmodule SelfWeb.Router do
     resources "/vendas", VendaController
     resources "/itens_venda", ItemVendaController
     resources "/usuarios", UsuarioController
+    get "/itens_venda/:id/venda", ItemVendaController, :venda
   end
 
   scope "/auth", SelfWeb do

@@ -13,9 +13,9 @@ defmodule SelfWeb.ItemVendaController do
 
   def new(conn, _params) do
     changeset = Movimentacao.change_item_venda(%ItemVenda{})
-    vendas = Self.Movimentacao.select_vendas
+    # vendas = Self.Movimentacao.select_vendas
     produtos = Self.Estoque.select_produtos
-    render(conn, "new.html", changeset: changeset, vendas: vendas, produtos: produtos)
+    render(conn, "new.html", changeset: changeset, produtos: produtos)
   end
 
   def create(conn, %{"item_venda" => item_venda_params}) do
@@ -26,9 +26,9 @@ defmodule SelfWeb.ItemVendaController do
         |> redirect(to: Routes.item_venda_path(conn, :show, item_venda))
 
       {:error, %Ecto.Changeset{} = changeset} ->
-        vendas = Self.Movimentacao.select_vendas
+        # vendas = Self.Movimentacao.select_vendas
         produtos = Self.Estoque.select_produtos
-        render(conn, "new.html", changeset: changeset, vendas: vendas, produtos: produtos)
+        render(conn, "new.html", changeset: changeset, produtos: produtos)
     end
   end
 
@@ -40,9 +40,8 @@ defmodule SelfWeb.ItemVendaController do
   def edit(conn, %{"id" => id}) do
     item_venda = Movimentacao.get_item_venda!(id)
     changeset = Movimentacao.change_item_venda(item_venda)
-    vendas = Self.Movimentacao.select_vendas
     produtos = Self.Estoque.select_produtos
-    render(conn, "edit.html", item_venda: item_venda, changeset: changeset, vendas: vendas, produtos: produtos)
+    render(conn, "edit.html", item_venda: item_venda, changeset: changeset, produtos: produtos)
   end
 
   def update(conn, %{"id" => id, "item_venda" => item_venda_params}) do
@@ -55,9 +54,9 @@ defmodule SelfWeb.ItemVendaController do
         |> redirect(to: Routes.item_venda_path(conn, :show, item_venda))
 
       {:error, %Ecto.Changeset{} = changeset} ->
-        vendas = Self.Movimentacao.select_vendas
+        # vendas = Self.Movimentacao.select_vendas
         produtos = Self.Estoque.select_produtos
-        render(conn, "edit.html", item_venda: item_venda, changeset: changeset, vendas: vendas, produtos: produtos)
+        render(conn, "edit.html", item_venda: item_venda, changeset: changeset, produtos: produtos)
     end
   end
 
@@ -68,5 +67,12 @@ defmodule SelfWeb.ItemVendaController do
     conn
     |> put_flash(:info, "Item venda excluido com sucesso.")
     |> redirect(to: Routes.item_venda_path(conn, :index))
+  end
+
+  def venda(conn, %{"id" => id}) do
+    item_venda = %Movimentacao.ItemVenda{venda_id: String.to_integer(id)}
+    changeset = Movimentacao.change_item_venda(item_venda)
+    produtos = Self.Estoque.select_produtos
+    render(conn, "new.html", changeset: changeset, produtos: produtos)
   end
 end
