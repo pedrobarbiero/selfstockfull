@@ -101,4 +101,9 @@ defmodule Self.Estoque do
   def change_produto(%Produto{} = produto) do
     Produto.changeset(produto, %{})
   end
+
+  def select_produtos do
+    Repo.all(Produto)
+    |> Enum.map(&{"#{&1.nome}", &1.id})
+  end
 end

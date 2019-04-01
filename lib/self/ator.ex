@@ -402,4 +402,14 @@ defmodule Self.Ator do
     Repo.all(Funcionario)
     |> Enum.map(&{"#{&1.nome}", &1.id})
   end
+
+  def select_fornecedores do
+    Repo.all(Fornecedor)
+    |> Enum.map(&{"#{&1.nome_fantasia}", &1.id})
+  end
+
+  def select_clientes do
+    Repo.all(Cliente)
+    |> Enum.map(&{"#{&1.nome}", &1.id})
+  end
 end

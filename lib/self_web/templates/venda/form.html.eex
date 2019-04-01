@@ -10,12 +10,20 @@
   <%= error_tag f, :valor %>
 
   <%= label f, :data %>
-  <%= date_select f, :data %>
+  <%= date_input f, :data, class: "form-control" %>
   <%= error_tag f, :data %>
 
   <%= label f, :desconto %>
   <%= number_input f, :desconto, step: "any" %>
   <%= error_tag f, :desconto %>
+
+  <%= label f, :funcionario_id %>
+  <%= select f, :funcionario_id, @funcionarios %>
+  <%= error_tag f, :funcionario_id %>
+
+  <%= label f, :cliente_id %>
+  <%= select f, :cliente_id, @clientes %>
+  <%= error_tag f, :cliente_id %>
 
   <div>
     <%= submit "Salvar" %>

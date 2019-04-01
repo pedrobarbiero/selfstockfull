@@ -13,18 +13,22 @@ defmodule SelfWeb.VendaController do
 
   def new(conn, _params) do
     changeset = Movimentacao.change_venda(%Venda{})
-    render(conn, "new.html", changeset: changeset)
+    funcionarios = Self.Ator.select_funcionarios
+    clientes = Self.Ator.select_clientes
+    render(conn, "new.html", changeset: changeset, funcionarios: funcionarios, clientes: clientes)
   end
 
   def create(conn, %{"venda" => venda_params}) do
     case Movimentacao.create_venda(venda_params) do
       {:ok, venda} ->
         conn
-        |> put_flash(:info, "Venda created successfully.")
+        |> put_flash(:info, "Venda criado com sucesso.")
         |> redirect(to: Routes.venda_path(conn, :show, venda))
 
       {:error, %Ecto.Changeset{} = changeset} ->
-        render(conn, "new.html", changeset: changeset)
+        funcionarios = Self.Ator.select_funcionarios
+        clientes = Self.Ator.select_clientes
+        render(conn, "new.html", changeset: changeset, funcionarios: funcionarios, clientes: clientes)
     end
   end
 
@@ -36,7 +40,9 @@ defmodule SelfWeb.VendaController do
   def edit(conn, %{"id" => id}) do
     venda = Movimentacao.get_venda!(id)
     changeset = Movimentacao.change_venda(venda)
-    render(conn, "edit.html", venda: venda, changeset: changeset)
+    funcionarios = Self.Ator.select_funcionarios
+    clientes = Self.Ator.select_clientes
+    render(conn, "edit.html", venda: venda, changeset: changeset, funcionarios: funcionarios, clientes: clientes)
   end
 
   def update(conn, %{"id" => id, "venda" => venda_params}) do
@@ -45,11 +51,13 @@ defmodule SelfWeb.VendaController do
     case Movimentacao.update_venda(venda, venda_params) do
       {:ok, venda} ->
         conn
-        |> put_flash(:info, "Venda updated successfully.")
+        |> put_flash(:info, "Venda atualizado com sucesso.")
         |> redirect(to: Routes.venda_path(conn, :show, venda))
 
       {:error, %Ecto.Changeset{} = changeset} ->
-        render(conn, "edit.html", venda: venda, changeset: changeset)
+        funcionarios = Self.Ator.select_funcionarios
+        clientes = Self.Ator.select_clientes
+        render(conn, "edit.html", venda: venda, changeset: changeset, funcionarios: funcionarios, clientes: clientes)
     end
   end
 
@@ -58,7 +66,7 @@ defmodule SelfWeb.VendaController do
     {:ok, _venda} = Movimentacao.delete_venda(venda)
 
     conn
-    |> put_flash(:info, "Venda deleted successfully.")
+    |> put_flash(:info, "Venda excluido com sucesso.")
     |> redirect(to: Routes.venda_path(conn, :index))
   end
 end

@@ -21,7 +21,7 @@ defmodule SelfWeb.UsuarioController do
     case Ator.create_usuario(usuario_params) do
       {:ok, usuario} ->
         conn
-        |> put_flash(:info, "Usuario created successfully.")
+        |> put_flash(:info, "Usuario criado com sucesso.")
         |> redirect(to: Routes.usuario_path(conn, :show, usuario))
 
       {:error, %Ecto.Changeset{} = changeset} ->
@@ -48,7 +48,7 @@ defmodule SelfWeb.UsuarioController do
     case Ator.update_usuario(usuario, usuario_params) do
       {:ok, usuario} ->
         conn
-        |> put_flash(:info, "Usuario updated successfully.")
+        |> put_flash(:info, "Usuario atualizado com sucesso.")
         |> redirect(to: Routes.usuario_path(conn, :show, usuario))
 
       {:error, %Ecto.Changeset{} = changeset} ->
@@ -61,7 +61,7 @@ defmodule SelfWeb.UsuarioController do
     {:ok, _usuario} = Ator.delete_usuario(usuario)
 
     conn
-    |> put_flash(:info, "Usuario deleted successfully.")
+    |> put_flash(:info, "Usuario excluido com sucesso.")
     |> redirect(to: Routes.usuario_path(conn, :index))
   end
 end

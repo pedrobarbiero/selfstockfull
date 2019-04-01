@@ -20,7 +20,7 @@ defmodule SelfWeb.PaisController do
     case Localizacao.create_pais(pais_params) do
       {:ok, pais} ->
         conn
-        |> put_flash(:info, "Pais created successfully.")
+        |> put_flash(:info, "Pais criado com sucesso.")
         |> redirect(to: Routes.pais_path(conn, :show, pais))
 
       {:error, %Ecto.Changeset{} = changeset} ->
@@ -45,7 +45,7 @@ defmodule SelfWeb.PaisController do
     case Localizacao.update_pais(pais, pais_params) do
       {:ok, pais} ->
         conn
-        |> put_flash(:info, "Pais updated successfully.")
+        |> put_flash(:info, "Pais atualizado com sucesso.")
         |> redirect(to: Routes.pais_path(conn, :show, pais))
 
       {:error, %Ecto.Changeset{} = changeset} ->
@@ -58,7 +58,7 @@ defmodule SelfWeb.PaisController do
     {:ok, _pais} = Localizacao.delete_pais(pais)
 
     conn
-    |> put_flash(:info, "Pais deleted successfully.")
+    |> put_flash(:info, "Pais excluido com sucesso.")
     |> redirect(to: Routes.pais_path(conn, :index))
   end
 end

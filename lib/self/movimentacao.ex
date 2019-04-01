@@ -389,4 +389,15 @@ defmodule Self.Movimentacao do
   def change_item_venda(%ItemVenda{} = item_venda) do
     ItemVenda.changeset(item_venda, %{})
   end
+
+  def select_compras do
+    Repo.all(Compra)
+    |> Enum.map(&{"#{&1.numero}", &1.id})
+  end
+
+  def select_vendas do
+    Repo.all(Venda)
+    |> Enum.map(&{"#{&1.id}", &1.id})
+  end
+
 end

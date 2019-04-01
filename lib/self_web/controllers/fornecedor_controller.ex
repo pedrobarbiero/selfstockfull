@@ -22,7 +22,7 @@ defmodule SelfWeb.FornecedorController do
     case Ator.create_fornecedor(fornecedor_params) do
       {:ok, fornecedor} ->
         conn
-        |> put_flash(:info, "Fornecedor created successfully.")
+        |> put_flash(:info, "Fornecedor criado com sucesso.")
         |> redirect(to: Routes.fornecedor_path(conn, :show, fornecedor))
 
       {:error, %Ecto.Changeset{} = changeset} ->
@@ -49,7 +49,7 @@ defmodule SelfWeb.FornecedorController do
     case Ator.update_fornecedor(fornecedor, fornecedor_params) do
       {:ok, fornecedor} ->
         conn
-        |> put_flash(:info, "Fornecedor updated successfully.")
+        |> put_flash(:info, "Fornecedor atualizado com sucesso.")
         |> redirect(to: Routes.fornecedor_path(conn, :show, fornecedor))
 
       {:error, %Ecto.Changeset{} = changeset} ->
@@ -63,7 +63,7 @@ defmodule SelfWeb.FornecedorController do
     {:ok, _fornecedor} = Ator.delete_fornecedor(fornecedor)
 
     conn
-    |> put_flash(:info, "Fornecedor deleted successfully.")
+    |> put_flash(:info, "Fornecedor excluido com sucesso.")
     |> redirect(to: Routes.fornecedor_path(conn, :index))
   end
 end

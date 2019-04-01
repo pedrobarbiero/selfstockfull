@@ -20,7 +20,7 @@ defmodule SelfWeb.ProdutoController do
     case Estoque.create_produto(produto_params) do
       {:ok, produto} ->
         conn
-        |> put_flash(:info, "Produto created successfully.")
+        |> put_flash(:info, "Produto criado com sucesso.")
         |> redirect(to: Routes.produto_path(conn, :show, produto))
 
       {:error, %Ecto.Changeset{} = changeset} ->
@@ -45,7 +45,7 @@ defmodule SelfWeb.ProdutoController do
     case Estoque.update_produto(produto, produto_params) do
       {:ok, produto} ->
         conn
-        |> put_flash(:info, "Produto updated successfully.")
+        |> put_flash(:info, "Produto atualizado com sucesso.")
         |> redirect(to: Routes.produto_path(conn, :show, produto))
 
       {:error, %Ecto.Changeset{} = changeset} ->
@@ -58,7 +58,7 @@ defmodule SelfWeb.ProdutoController do
     {:ok, _produto} = Estoque.delete_produto(produto)
 
     conn
-    |> put_flash(:info, "Produto deleted successfully.")
+    |> put_flash(:info, "Produto excluido com sucesso.")
     |> redirect(to: Routes.produto_path(conn, :index))
   end
 end

@@ -22,7 +22,7 @@ defmodule SelfWeb.FuncionarioController do
     case Ator.create_funcionario(funcionario_params) do
       {:ok, funcionario} ->
         conn
-        |> put_flash(:info, "Funcionario created successfully.")
+        |> put_flash(:info, "Funcionario criado com sucesso.")
         |> redirect(to: Routes.funcionario_path(conn, :show, funcionario))
 
       {:error, %Ecto.Changeset{} = changeset} ->
@@ -49,7 +49,7 @@ defmodule SelfWeb.FuncionarioController do
     case Ator.update_funcionario(funcionario, funcionario_params) do
       {:ok, funcionario} ->
         conn
-        |> put_flash(:info, "Funcionario updated successfully.")
+        |> put_flash(:info, "Funcionario atualizado com sucesso.")
         |> redirect(to: Routes.funcionario_path(conn, :show, funcionario))
 
       {:error, %Ecto.Changeset{} = changeset} ->
@@ -63,7 +63,7 @@ defmodule SelfWeb.FuncionarioController do
     {:ok, _funcionario} = Ator.delete_funcionario(funcionario)
 
     conn
-    |> put_flash(:info, "Funcionario deleted successfully.")
+    |> put_flash(:info, "Funcionario excluido com sucesso.")
     |> redirect(to: Routes.funcionario_path(conn, :index))
   end
 end

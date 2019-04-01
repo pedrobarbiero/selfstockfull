@@ -22,7 +22,7 @@ defmodule SelfWeb.ClienteController do
     case Ator.create_cliente(cliente_params) do
       {:ok, cliente} ->
         conn
-        |> put_flash(:info, "Cliente created successfully.")
+        |> put_flash(:info, "Cliente criado com sucesso.")
         |> redirect(to: Routes.cliente_path(conn, :show, cliente))
 
       {:error, %Ecto.Changeset{} = changeset} ->
@@ -49,7 +49,7 @@ defmodule SelfWeb.ClienteController do
     case Ator.update_cliente(cliente, cliente_params) do
       {:ok, cliente} ->
         conn
-        |> put_flash(:info, "Cliente updated successfully.")
+        |> put_flash(:info, "Cliente atualizado com sucesso.")
         |> redirect(to: Routes.cliente_path(conn, :show, cliente))
 
       {:error, %Ecto.Changeset{} = changeset} ->
@@ -63,7 +63,7 @@ defmodule SelfWeb.ClienteController do
     {:ok, _cliente} = Ator.delete_cliente(cliente)
 
     conn
-    |> put_flash(:info, "Cliente deleted successfully.")
+    |> put_flash(:info, "Cliente excluido com sucesso.")
     |> redirect(to: Routes.cliente_path(conn, :index))
   end
 end

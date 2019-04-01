@@ -10,7 +10,7 @@
   <%= error_tag f, :numero %>
 
   <%= label f, :data %>
-  <%= date_select f, :data %>
+  <%= date_input f, :data, class: "form-control" %>
   <%= error_tag f, :data %>
 
   <%= label f, :icms %>
@@ -22,8 +22,16 @@
   <%= error_tag f, :desconto %>
 
   <%= label f, :vencimento %>
-  <%= date_select f, :vencimento %>
+  <%= date_input f, :vencimento, class: "form-control" %>
   <%= error_tag f, :vencimento %>
+
+  <%= label f, :funcionario_id %>
+  <%= select f, :funcionario_id, @funcionarios %>
+  <%= error_tag f, :funcionario_id %>
+  
+  <%= label f, :fornecedor_id %>
+  <%= select f, :fornecedor_id, @fornecedores %>
+  <%= error_tag f, :fornecedor_id %>
 
   <div>
     <%= submit "Salvar" %>

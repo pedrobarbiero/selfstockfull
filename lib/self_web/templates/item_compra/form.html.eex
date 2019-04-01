@@ -5,6 +5,14 @@
     </div>
   <% end %>
 
+  <%= label f, :compra_id %>
+  <%= select f, :compra_id, @compras %>
+  <%= error_tag f, :compra_id %>
+
+  <%= label f, :produto_id %>
+  <%= select f, :produto_id, @produtos %>
+  <%= error_tag f, :produto_id %>
+
   <%= label f, :quantidade %>
   <%= number_input f, :quantidade %>
   <%= error_tag f, :quantidade %>

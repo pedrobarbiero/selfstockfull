@@ -13,18 +13,22 @@ defmodule SelfWeb.CompraController do
 
   def new(conn, _params) do
     changeset = Movimentacao.change_compra(%Compra{})
-    render(conn, "new.html", changeset: changeset)
+    funcionarios = Self.Ator.select_funcionarios
+    fornecedores = Self.Ator.select_fornecedores
+    render(conn, "new.html", changeset: changeset, funcionarios: funcionarios, fornecedores: fornecedores )
   end
 
   def create(conn, %{"compra" => compra_params}) do
     case Movimentacao.create_compra(compra_params) do
       {:ok, compra} ->
         conn
-        |> put_flash(:info, "Compra created successfully.")
+        |> put_flash(:info, "Compra inserida com sucesso.")
         |> redirect(to: Routes.compra_path(conn, :show, compra))
 
       {:error, %Ecto.Changeset{} = changeset} ->
-        render(conn, "new.html", changeset: changeset)
+        funcionarios = Self.Ator.select_funcionarios
+        fornecedores = Self.Ator.select_fornecedores
+        render(conn, "new.html", changeset: changeset, funcionarios: funcionarios, fornecedores: fornecedores)
     end
   end
 
@@ -36,7 +40,9 @@ defmodule SelfWeb.CompraController do
   def edit(conn, %{"id" => id}) do
     compra = Movimentacao.get_compra!(id)
     changeset = Movimentacao.change_compra(compra)
-    render(conn, "edit.html", compra: compra, changeset: changeset)
+    funcionarios = Self.Ator.select_funcionarios
+    fornecedores = Self.Ator.select_fornecedores
+    render(conn, "edit.html", compra: compra, changeset: changeset, funcionarios: funcionarios, fornecedores: fornecedores)
   end
 
   def update(conn, %{"id" => id, "compra" => compra_params}) do
@@ -45,11 +51,13 @@ defmodule SelfWeb.CompraController do
     case Movimentacao.update_compra(compra, compra_params) do
       {:ok, compra} ->
         conn
-        |> put_flash(:info, "Compra updated successfully.")
+        |> put_flash(:info, "Compra atualizar com sucesso.")
         |> redirect(to: Routes.compra_path(conn, :show, compra))
 
       {:error, %Ecto.Changeset{} = changeset} ->
-        render(conn, "edit.html", compra: compra, changeset: changeset)
+        funcionarios = Self.Ator.select_funcionarios
+        fornecedores = Self.Ator.select_fornecedores
+        render(conn, "edit.html", compra: compra, changeset: changeset, funcionarios: funcionarios, fornecedores: fornecedores)
     end
   end
 
@@ -58,7 +66,7 @@ defmodule SelfWeb.CompraController do
     {:ok, _compra} = Movimentacao.delete_compra(compra)
 
     conn
-    |> put_flash(:info, "Compra deleted successfully.")
+    |> put_flash(:info, "Compra excluida com sucesso.")
     |> redirect(to: Routes.compra_path(conn, :index))
   end
 end

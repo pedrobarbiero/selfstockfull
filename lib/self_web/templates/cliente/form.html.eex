@@ -14,7 +14,7 @@
   <%= error_tag f, :nome %>
 
   <%= label f, :data_nascimento %>
-  <%= date_select f, :data_nascimento %>
+  <%= date_input f, :data_nascimento, class: "form-control"%>
   <%= error_tag f, :data_nascimento %>
 
   <%= label f, :email %>
