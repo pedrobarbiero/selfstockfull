@@ -6,7 +6,7 @@
   <% end %>
 
   <%= label f, :compra_id %>
-  <%= select f, :compra_id, @compras %>
+  <%= number_input f, :compra_id %>
   <%= error_tag f, :compra_id %>
 
   <%= label f, :produto_id %>

@@ -25,6 +25,7 @@
         <%= link "Visualizar", to: Routes.compra_path(@conn, :show, compra) %>
         <%= link "Alterar", to: Routes.compra_path(@conn, :edit, compra) %>
         <%= link "Excluir", to: Routes.compra_path(@conn, :delete, compra), method: :delete, data: [confirm: "Tem certeza?"] %>
+        <%= link("Itens", to: "../itens_compra/#{compra.id}/compra") %>
       </td>
     </tr>
 <% end %>

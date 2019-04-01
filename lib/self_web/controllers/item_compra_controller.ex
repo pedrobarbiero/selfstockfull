@@ -69,4 +69,11 @@ defmodule SelfWeb.ItemCompraController do
     |> put_flash(:info, "Item compra excluido com sucesso.")
     |> redirect(to: Routes.item_compra_path(conn, :index))
   end
+
+  def compra(conn, %{"id" => id}) do
+    item_compra = %Movimentacao.ItemCompra{compra_id: String.to_integer(id)}
+    changeset = Movimentacao.change_item_compra(item_compra)
+    produtos = Self.Estoque.select_produtos
+    render(conn, "new.html", changeset: changeset, produtos: produtos)
+  end
 end
