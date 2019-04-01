@@ -1,4 +1,4 @@
-<h1>Listing Usuarios</h1>
+<h1>Lista de Usuarios</h1>
 
 <table>
   <thead>
@@ -6,7 +6,7 @@
       <th>Nome</th>
       <th>Provider</th>
       <th>Email</th>
-      <th>Token</th>
+      <%=#<th>Token</th> %>
 
       <th></th>
     </tr>
@@ -17,16 +17,16 @@
       <td><%= usuario.nome %></td>
       <td><%= usuario.provider %></td>
       <td><%= usuario.email %></td>
-      <td><%= usuario.token %></td>
+      <%= #<td><%= usuario.token </td>%>
 
       <td>
-        <%= link "Show", to: Routes.usuario_path(@conn, :show, usuario) %>
-        <%= link "Edit", to: Routes.usuario_path(@conn, :edit, usuario) %>
-        <%= link "Delete", to: Routes.usuario_path(@conn, :delete, usuario), method: :delete, data: [confirm: "Are you sure?"] %>
+        <%= link "Visualizar", to: Routes.usuario_path(@conn, :show, usuario) %>
+        <%= link "Alterar", to: Routes.usuario_path(@conn, :edit, usuario) %>
+        <%= link "Excluir", to: Routes.usuario_path(@conn, :delete, usuario), method: :delete, data: [confirm: "Tem certeza?"] %>
       </td>
     </tr>
 <% end %>
   </tbody>
 </table>
 
-<span><%= link "New Usuario", to: Routes.usuario_path(@conn, :new) %></span>
+<span><%= link "Novo Usuario", to: Routes.usuario_path(@conn, :new) %></span>

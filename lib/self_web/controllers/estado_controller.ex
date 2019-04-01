@@ -62,7 +62,7 @@ defmodule SelfWeb.EstadoController do
     {:ok, _estado} = Localizacao.delete_estado(estado)
 
     conn
-    |> put_flash(:info, "Estado deleted successfully.")
+    |> put_flash(:info, "Estado excluido com sucesso.")
     |> redirect(to: Routes.estado_path(conn, :index))
   end
 end
