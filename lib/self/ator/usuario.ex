@@ -16,6 +16,6 @@ defmodule Self.Ator.Usuario do
   def changeset(usuario, attrs) do
     usuario
     |> cast(attrs, [:nome, :provider, :email, :token, :funcionario_id])
-    |> validate_required([:nome, :provider, :email, :token, :funcionario_id])
+    |> validate_required([:nome, :provider, :email, :token])
   end
 end
