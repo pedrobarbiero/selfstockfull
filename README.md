@@ -40,11 +40,12 @@ Tabela 1 - Conhecimento em relação a linguagem
     Github - 1 dia;<br>
     
 * Setup inicial<br>
-   - [ ] - Definição da arquitetura;<br>
-   - [ ] - Projeto inicial da linguagem de programação escolhida;<br>
-   - [ ] - Desenvolvimento do módulo de Fornecedor;<br>
-   - [ ] - Desenvolvimento do módulo de Usuário;<br>
-   - [ ] - Desenvolvimento do módulo de Fornecedor;<br>       
+   - [x] - Definição da arquitetura;<br>
+   - [x] - Projeto inicial da linguagem de programação escolhida;<br>
+   - [x] - Desenvolvimento do módulo de Cliente;<br>       
+   - [x] - Desenvolvimento do módulo de Fornecedor;<br>
+   - [x] - Desenvolvimento do módulo de Usuário;<br>
+   
     
  
 Release - 
