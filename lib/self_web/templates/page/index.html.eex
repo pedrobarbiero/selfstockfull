@@ -1,1 +1,5 @@
-   <img src="<%= Routes.static_path(@conn, "/images/logo.png") %>" alt="Phoenix Framework Logo"/>
+   <div class= "container" >
+      <div class="row jumbotron" id="main-logo">
+         <img src="<%= Routes.static_path(@conn, "/images/logo.png") %>" class="rounded mx-auto d-block" alt="Self Stock WEB"/>
+      <div>
+   </div>
