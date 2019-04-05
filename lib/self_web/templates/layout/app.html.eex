@@ -5,66 +5,164 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <title>Self · Phoenix Framework</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <title>Self Stock WEB</title>
     <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
   </head>
   <body>
     <header>
-      <section class="container">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">  
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">      
-    <li class="nav-item">
-        <%= link "Pais", to: Routes.pais_path(@conn, :index) %>   
-      </li>
-      <li class="nav-item">
-        <%= link "Estado", to: Routes.estado_path(@conn, :index) %>   
-      </li>
-      <li class="nav-item">
-        <%= link "Cidade", to: Routes.cidade_path(@conn, :index) %>   
-      </li>
-      <li class="nav-item">
-        <%= link "Endereço", to: Routes.endereco_path(@conn, :index) %>   
-      </li>
-      <li class="nav-item">
-        <%= link "Cliente", to: Routes.cliente_path(@conn, :index) %>   
-      </li>
-      <li class="nav-item">
-        <%= link "Fornecedor", to: Routes.fornecedor_path(@conn, :index) %>   
-      </li>
-      <li class="nav-item">
-        <%= link "Funcionario", to: Routes.funcionario_path(@conn, :index) %>   
-      </li>
-      <li class="nav-item">
-        <%= link "Produto", to: Routes.produto_path(@conn, :index) %>   
-      </li>
-      <li class="nav-item">
-        <%= link "Compra", to: Routes.compra_path(@conn, :index) %>   
-      </li>
-      <li class="nav-item">
-        <%= link "Venda", to: Routes.venda_path(@conn, :index) %>   
-      </li>
-      <li class="nav-item">
-        <%= link "SelfStock", to: Routes.venda_path(@conn, :index) %>   
-      </li>
-      <li>
-          <%= if @conn.assigns[:user] do %>          
-            <%= link "Logout", to: Routes.auth_path(@conn, :logout, "facebook") %>            
-          <%= else %>
-            <%= link "Login com Facebook", to: Routes.auth_path(@conn, :request, "facebook") %>                        
-            <%= link "Login com GitHub", to: Routes.auth_path(@conn, :request, "github") %>                        
-          <%= end %>
-      </li>
-    </ul>
-  </div>
-</nav>
-      </section>
+      <div class="row">
+        <div class="col-10">
+            <section class="menu menu--circle ">
+          <input type="checkbox" id="menu__active"/>
+          <label for="menu__active" class="menu__active">
+            <div class="menu__toggle">
+              <div class="icon">
+                <div class="hamburger"></div>
+              </div>
+            </div>
+            <input type="radio" name="arrow--up" id="degree--up-0"/>
+            <input type="radio" name="arrow--up" id="degree--up-1" />
+            <input type="radio" name="arrow--up" id="degree--up-2" />
+            <div class="menu__listings">
+              <ul class="circle">
+                <li>
+                  <div class="placeholder">
+                    <div class="upside">
+                      <%= link  to: Routes.pais_path(@conn, :index) , class: "button" do  %>
+                        <i class="fa fa-user"></i>
+                      <%= end %>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="placeholder">
+                    <div class="upside">
+                      <a href="#" class="button"><i class="fa fa-cog"></i></a>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="placeholder">
+                    <div class="upside">
+                      <a href="#">&nbsp</a>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="placeholder">
+                    <div class="upside">
+                      <a href="#" class="button"><i class="fa fa-commenting"></i></a>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="placeholder">
+                    <div class="upside">
+                      <a href="#" class="button"><i class="fa fa-trash"></i></a>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="placeholder">
+                    <div class="upside">
+                      <a href="#" class="button"><i class="fa fa-battery-4"></i></a>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="placeholder">
+                    <div class="upside">
+                      <a href="#" class="button"><i class="fa fa-calendar"></i></a>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="placeholder">
+                    <div class="upside">
+                      <a href="#" class="button"><i class="fa fa-cloud"></i></a>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="placeholder">
+                    <div class="upside">
+                      <a href="#" class="button"><i class="fa fa-wifi"></i></a>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="placeholder">
+                    <div class="upside">
+                      <a href="#" class="button"><i class="fa fa-envelope-o"></i></a>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="menu__arrow menu__arrow--top">
+              <ul>
+                <li>
+                  <label for="degree--up-0"><div class="arrow"></div></label>
+                  <label for="degree--up-1"><div class="arrow"></div></label>
+                  <label for="degree--up-2"><div class="arrow"></div></label>
+                </li>
+              </ul>
+            </div>
+          </label>
+        </section>
+      </div>
+      <div class="col-2">
+        <section class="login-main row">
+          <ul>
+              <%= if @conn.assigns[:user] do %>
+                <li  class="col-12 ">  
+                  <a href="<%= Routes.auth_path(@conn, :logout, "facebook") %>">
+                    <i class="fas fa-sign-out-alt"></i> 
+                  </a> 
+                </li>
+              <%= else %>
+                <li class="col-6">
+                      <a  href="<%= Routes.auth_path(@conn, :request, "facebook") %>">
+                          <i class="fab fa-facebook">
+                          </i>
+                      </a>
+                </li  >  
+                <li class="col-6" >  
+                  <a  href="<%= Routes.auth_path(@conn, :request, "github") %>" >
+                    <i class="fab fa-github-alt">
+                    </i>
+                  </a>     
+                </li  >  
+              <%= end %>
+          </ul>
+        </section>  
+      </div>
+      </div>
     </header>
-    <main role="main" class="container">
-      <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
-      <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
-      <%= render @view_module, @view_template, assigns %>
+     <main role="main" class="container">
+        <div class="row">
+          <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
+          <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+          <%= render @view_module, @view_template, assigns %>
+        </div>
     </main>
+    <footer id="contact" class="footer">             
+                                    <div class="widget_brand m-top-40 col-md-12"  style='text-align: center'>
+                                        <a href="" class="text-uppercase"><img class="img-thumbnail" src="https://raw.githubusercontent.com/ebasantos/estoque-web-app-front-end/master/src/img/self%20stock.png" class="img-thumbnail"  style='background-color: transparent; width: 100px;' alt="Self-Stock-WEB" />
+                                        </a>
+                                        <p class="text-white">A melhor solução em controle de estoque!</p>
+                                    </div>
+                                </div>                          
+                <div class="main_footer fix bg-mega text-center">
+                    <div class="col-md-12">
+                        <p class="wow fadeInRight text-white" data-wow-duration="1s">
+                            <i class="fa fa-phone"></i> 
+                            2016. All Rights Reserved
+                        </p>
+                    </div>
+                </div>
+      </footer>
     <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
   </body>
 </html>
