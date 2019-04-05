@@ -6,14 +6,13 @@ defmodule SelfWeb.Plug.RequireAuth do
   end
 
   def call(conn, _params) do
-    conn
-    # if (conn.assigns[:user]) do
-    #   conn
-    # else
-    #   conn
-    #   |> Phoenix.Controller.put_flash(:error, "Sem permissão")
-    #   |> redirect(to: "/")
-    #   |> halt()
-    # end
+    if (conn.assigns[:user]) do
+      conn
+    else
+      conn
+      |> Phoenix.Controller.put_flash(:error, "Sem permissão")
+      |> redirect(to: "/")
+      |> halt()
+    end
   end
 end
