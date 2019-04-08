@@ -7,11 +7,10 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <title>Self Stock WEB</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
     <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
-  </head>
-  <body>
-    <header>
-      <div class="row">
+    <nav class="orange darken-4">
+          <div class="row">
         <div class="col-10">
             <section class="menu menu--circle ">
           <input type="checkbox" id="menu__active"/>
@@ -27,6 +26,7 @@
             <div class="menu__listings">
               <ul class="circle">
               <li>
+<<<<<<< HEAD
                   <div class="placeholder">
                     <div class="upside">
                       <a href="/" class="button"><i class="fas fa-home"></i></i></a>
@@ -67,23 +67,48 @@
                   <div class="placeholder">
                     <div class="upside">
                        <a href="/fornecedores" class="button"><i class="fas fa-hands-helping"></i></a>
+=======
+                  <div class="placeholder">
+                    <div class="upside">
+                      <a href="/" class="button"><i class="fas fa-home"></i></i></a>
                     </div>
                   </div>
                 </li>      
                 <li>
                   <div class="placeholder">
                     <div class="upside">
+                      <%= link  to: Routes.pais_path(@conn, :index) , class: "button" do  %>
+                        <i class="fa fa-user"></i>
+                      <%= end %>
+>>>>>>> acdc9eb13a2938ec99a3cd1b47c6f2d683befa22
+                    </div>
+                  </div>
+                </li>      
+                <li>
+                  <div class="placeholder">
+                    <div class="upside">
+<<<<<<< HEAD
                        <a href="/enderecos" class="button"><i class="fas fa-map-marked-alt"></i></a>
+=======
+                      <a href="/produtos" class="button"><i class="fas fa-box"></i></a>
+>>>>>>> acdc9eb13a2938ec99a3cd1b47c6f2d683befa22
                     </div>
                   </div>
                 </li> 
                 <li>
                   <div class="placeholder">
                     <div class="upside">
+<<<<<<< HEAD
                        <a href="/cidades" class="button"><i class="fas fa-city"></i></a>
                     </div>
                   </div>
                 </li>  
+=======
+                      <a href="/produtos" class="button"><i class="fas fa-box"></i></a>
+                    </div>
+                  </div>
+                </li>          
+>>>>>>> acdc9eb13a2938ec99a3cd1b47c6f2d683befa22
               </ul>
             </div>
             <div class="menu__arrow menu__arrow--top">
@@ -98,9 +123,10 @@
           </label>
         </section>
       </div>
-      <div class="col-2">
-        <section class="login-main row">
-          <ul>
+      <div class="nav-wrapper container">
+      
+        <a href="#" class="brand-logo"></a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
               <%= if @conn.assigns[:user] do %>
                 <li  class="col-12 ">  
                   <a href="<%= Routes.auth_path(@conn, :logout, "facebook") %>">
@@ -121,16 +147,29 @@
                   </a>     
                 </li  >  
               <%= end %>
-          </ul>
-        </section>  
+        </ul>
       </div>
-      </div>
+    </nav>
+  </head>
+  <body>
+    <header>
+        <style>
+    </style>
+  <br><br><br>
     </header>
      <main role="main" class="container">
         <div class="row">
+<<<<<<< HEAD
             <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
             <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
             <%= render @view_module, @view_template, assigns %>
+=======
+          <div class="default-form">
+            <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
+            <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+            <%= render @view_module, @view_template, assigns %>
+          </div>
+>>>>>>> acdc9eb13a2938ec99a3cd1b47c6f2d683befa22
         </div>
     </main>
     <footer id="contact" class="footer">             
@@ -149,6 +188,7 @@
                     </div>
                 </div>
       </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
     <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
   </body>
 </html>

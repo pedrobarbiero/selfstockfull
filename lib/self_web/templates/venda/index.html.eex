@@ -20,8 +20,8 @@
       <td>
         <%= link "Visualizar", to: Routes.venda_path(@conn, :show, venda) %>
         <%= link "Editar", to: Routes.venda_path(@conn, :edit, venda) %>
-        <%= link "Excluir", to: Routes.venda_path(@conn, :delete, venda), method: :delete, data: [confirm: "Tem certeza?"] %>
-        <%= link("Itens", to: "../itens_venda/#{venda.id}/venda") %>
+        <%= link "Excluir", to: Routes.venda_path(@conn, :delete, venda), method: :delete, data: [confirm: "Tem certeza?"] %>        
+        <%= link "Itens", to: Routes.item_venda_path(@conn, :venda, venda) %>
       </td>
     </tr>
 <% end %>

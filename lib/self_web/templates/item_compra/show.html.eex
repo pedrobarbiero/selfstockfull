@@ -15,4 +15,4 @@
 </ul>
 
 <span><%= link "Alterar", to: Routes.item_compra_path(@conn, :edit, @item_compra) %></span>
-<span><%= link "Voltar", to: Routes.item_compra_path(@conn, :index) %></span>
+<span><%= link "Voltar", to: Routes.compra_path(@conn, :index) %></span>

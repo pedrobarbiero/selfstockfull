@@ -6,7 +6,7 @@
   <% end %>
 
   <%= label f, :endereco_id %>
-  <%= select f, :endereco_id, @enderecos %>
+  <%= select f, :endereco_id, @enderecos, class: "form-control" %>
   <%= error_tag f, :endereco_id %>
 
   <%= label f, :nome %>
@@ -26,7 +26,7 @@
   <%= error_tag f, :cpf %>
 
   <%= label f, :sexo %>
-  <%= number_input f, :sexo %>
+  <%= select f, :sexo, @sexos, class: "form-control" %>
   <%= error_tag f, :sexo %>
 
   <%= label f, :telefone %>

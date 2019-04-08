@@ -4,7 +4,8 @@ defmodule SelfWeb.ProdutoController do
   alias Self.Estoque
   alias Self.Estoque.Produto
 
-  plug SelfWeb.Plug.RequireAuth when action in [:index, :edit, :new, :show, :create, :update, :delete]
+  plug SelfWeb.Plug.RequireAuth
+       when action in [:index, :edit, :new, :show, :create, :update, :delete]
 
   def index(conn, _params) do
     produtos = Estoque.list_produtos()
@@ -13,7 +14,8 @@ defmodule SelfWeb.ProdutoController do
 
   def new(conn, _params) do
     changeset = Estoque.change_produto(%Produto{})
-    render(conn, "new.html", changeset: changeset)
+    tipos = Estoque.select_tipo_produto()
+    render(conn, "new.html", changeset: changeset, tipos: tipos)
   end
 
   def create(conn, %{"produto" => produto_params}) do
@@ -24,7 +26,8 @@ defmodule SelfWeb.ProdutoController do
         |> redirect(to: Routes.produto_path(conn, :show, produto))
 
       {:error, %Ecto.Changeset{} = changeset} ->
-        render(conn, "new.html", changeset: changeset)
+        tipos = Estoque.select_tipo_produto
+        render(conn, "new.html", changeset: changeset, tipos: tipos)
     end
   end
 
@@ -36,7 +39,8 @@ defmodule SelfWeb.ProdutoController do
   def edit(conn, %{"id" => id}) do
     produto = Estoque.get_produto!(id)
     changeset = Estoque.change_produto(produto)
-    render(conn, "edit.html", produto: produto, changeset: changeset)
+    tipos = Estoque.select_tipo_produto
+    render(conn, "edit.html", produto: produto, changeset: changeset, tipos: tipos)
   end
 
   def update(conn, %{"id" => id, "produto" => produto_params}) do
@@ -49,7 +53,8 @@ defmodule SelfWeb.ProdutoController do
         |> redirect(to: Routes.produto_path(conn, :show, produto))
 
       {:error, %Ecto.Changeset{} = changeset} ->
-        render(conn, "edit.html", produto: produto, changeset: changeset)
+        tipos = Estoque.select_tipo_produto
+        render(conn, "edit.html", produto: produto, changeset: changeset, tipos: tipos)
     end
   end
 

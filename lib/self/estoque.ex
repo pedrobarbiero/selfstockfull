@@ -106,4 +106,15 @@ defmodule Self.Estoque do
     Repo.all(Produto)
     |> Enum.map(&{"#{&1.nome}", &1.id})
   end
+
+  def select_tipo_produto do
+    [
+      {"Eletronicos", 1},
+      {"Informatica ", 2},
+      {"Automotivo", 3},
+      {"Alimenticio", 4},
+      {"Moda", 5},
+      {"Casa", 6}
+    ]
+  end
 end

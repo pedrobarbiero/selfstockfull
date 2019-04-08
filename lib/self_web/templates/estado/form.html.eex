@@ -6,7 +6,7 @@
   <% end %>
 
   <%= label f, :pais_id %>
-  <%= select f, :pais_id, @paises %>
+  <%= select f, :pais_id, @paises, class: "form-control" %>
   <%= error_tag f, :pais_id %>
 
   <%= label f, :nome %>

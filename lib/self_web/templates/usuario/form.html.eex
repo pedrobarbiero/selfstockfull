@@ -22,9 +22,15 @@
     <%= text_input f, :token %>
     <%= error_tag f, :token %>
 
+<<<<<<< HEAD
     <%= label f, :funcionario_id %>
     <%= select f, :funcionario_id, @funcionarios %>
     <%= error_tag f, :funcionario_id %>
+=======
+   <%= label f, :funcionario_id %>
+   <%= select f, :funcionario_id, @funcionarios, class: "form-control" %>
+   <%= error_tag f, :funcionario_id %>
+>>>>>>> acdc9eb13a2938ec99a3cd1b47c6f2d683befa22
 
     <div>
       <%= submit "Salvar" %>

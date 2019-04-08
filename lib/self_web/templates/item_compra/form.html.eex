@@ -10,7 +10,7 @@
   <%= error_tag f, :compra_id %>
 
   <%= label f, :produto_id %>
-  <%= select f, :produto_id, @produtos %>
+  <%= select f, :produto_id, @produtos, class: "form-control" %>
   <%= error_tag f, :produto_id %>
 
   <%= label f, :quantidade %>
@@ -24,4 +24,28 @@
   <div>
     <%= submit "Salvar" %>
   </div>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Quantidade</th>
+      <th>Valor unitario</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for item_compra <- @itens_compra do %>
+    <tr>
+      <td><%= item_compra.quantidade %></td>
+      <td><%= item_compra.valor_unitario %></td>
+      <td>        
+        <%= link "Excluir", to: Routes.item_compra_path(@conn, :delete, item_compra), method: :delete, data: [confirm: "Tem certeza?"] %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+
 <% end %>

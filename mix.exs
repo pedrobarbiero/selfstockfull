@@ -46,7 +46,8 @@ defmodule Self.MixProject do
       {:ueberauth_google, "~> 0.8"},
       {:ueberauth_facebook, "~> 0.8"},
       {:ueberauth_github, "~> 0.7"},
-      {:poison, "~> 3.1"}
+      {:poison, "~> 3.1"},
+      {:brcpfcnpj, "~> 0.2.0"}
     ]
   end
 
