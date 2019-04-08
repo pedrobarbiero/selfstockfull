@@ -20,4 +20,27 @@
   <div>
     <%= submit "Salvar" %>
   </div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Quantidade</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for item_venda <- @itens_venda do %>
+    <tr>
+      <td><%= item_venda.quantidade %></td>
+
+      <td>       
+        <%= link "Excluir", to: Routes.item_venda_path(@conn, :delete, item_venda), method: :delete, data: [confirm: "Tem certeza?"] %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+
 <% end %>

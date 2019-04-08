@@ -395,6 +395,11 @@ defmodule Self.Movimentacao do
     Repo.all(qry)
   end
 
+  def itens_by_vendaid(venda_id) do
+    qry = from(iv in ItemVenda, where: iv.venda_id == ^venda_id)
+    Repo.all(qry)
+  end
+
   def select_compras do
     Repo.all(Compra)
     |> Enum.map(&{"#{&1.numero}", &1.id})

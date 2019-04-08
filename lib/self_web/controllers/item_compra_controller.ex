@@ -31,13 +31,11 @@ defmodule SelfWeb.ItemCompraController do
         |> redirect(to: Routes.item_compra_path(conn, :compra, compra))
 
       {:error, %Ecto.Changeset{} = changeset} ->
-        compras = Self.Movimentacao.select_compras()
         produtos = Self.Estoque.select_produtos()
-        itens_compra = Movimentacao.list_itens_compra()
+        itens_compra = Movimentacao.itens_by_compraid(compra_id)
 
         render(conn, "new.html",
           changeset: changeset,
-          compras: compras,
           produtos: produtos,
           itens_compra: itens_compra
         )
