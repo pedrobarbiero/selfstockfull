@@ -2,4 +2,4 @@
 
 <%= render "form.html", Map.put(assigns, :action, Routes.item_compra_path(@conn, :create)) %>
 
-<span><%= link "Voltar", to: Routes.item_compra_path(@conn, :index) %></span>
+<span><%= link "Voltar", to: Routes.compra_path(@conn, :index) %></span>

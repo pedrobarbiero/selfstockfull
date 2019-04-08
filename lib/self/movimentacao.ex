@@ -390,6 +390,11 @@ defmodule Self.Movimentacao do
     ItemVenda.changeset(item_venda, %{})
   end
 
+  def itens_by_compraid(compra_id) do
+    qry = from(ic in ItemCompra, where: ic.compra_id == ^compra_id)
+    Repo.all(qry)
+  end
+
   def select_compras do
     Repo.all(Compra)
     |> Enum.map(&{"#{&1.numero}", &1.id})
