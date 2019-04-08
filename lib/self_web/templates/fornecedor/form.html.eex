@@ -6,7 +6,7 @@
   <% end %>
 
   <%= label f, :endereco_id %>
-  <%= select f, :endereco_id, @enderecos %>
+  <%= select f, :endereco_id, @enderecos, class: "form-control" %>
   <%= error_tag f, :endereco_id %>
 
   <%= label f, :nome_fantasia %>

@@ -392,12 +392,12 @@ defmodule Self.Ator do
 
   def change_create_usuario(attrs \\ %{}) do
     changeset = Usuario.changeset(%Usuario{}, attrs)
+
     case Repo.get_by(Usuario, email: changeset.changes.email) do
-      nil -> Repo.insert changeset
+      nil -> Repo.insert(changeset)
       usuario -> {:ok, usuario}
     end
   end
-
 
   def select_funcionarios do
     Repo.all(Funcionario)
@@ -412,5 +412,9 @@ defmodule Self.Ator do
   def select_clientes do
     Repo.all(Cliente)
     |> Enum.map(&{"#{&1.nome}", &1.id})
+  end
+
+  def select_sexo do
+    [{"masculino", 1}, {"feminino", 2}]
   end
 end

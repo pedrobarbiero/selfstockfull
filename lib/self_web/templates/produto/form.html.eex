@@ -22,7 +22,7 @@
   <%= error_tag f, :valor_venda %>
 
   <%= label f, :tipo %>
-  <%= number_input f, :tipo %>
+  <%= select f, :tipo, @tipos, class: "form-control" %>  
   <%= error_tag f, :tipo %>
 
   <div>

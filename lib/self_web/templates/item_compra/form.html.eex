@@ -10,7 +10,7 @@
   <%= error_tag f, :compra_id %>
 
   <%= label f, :produto_id %>
-  <%= select f, :produto_id, @produtos %>
+  <%= select f, :produto_id, @produtos, class: "form-control" %>
   <%= error_tag f, :produto_id %>
 
   <%= label f, :quantidade %>

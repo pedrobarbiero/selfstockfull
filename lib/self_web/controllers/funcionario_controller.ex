@@ -15,7 +15,8 @@ defmodule SelfWeb.FuncionarioController do
   def new(conn, _params) do
     changeset = Ator.change_funcionario(%Funcionario{})
     enderecos = Localizacao.select_enderecos()
-    render(conn, "new.html", changeset: changeset, enderecos: enderecos)
+    sexos = Ator.select_sexo
+    render(conn, "new.html", changeset: changeset, enderecos: enderecos, sexos: sexos)
   end
 
   def create(conn, %{"funcionario" => funcionario_params}) do
@@ -27,7 +28,8 @@ defmodule SelfWeb.FuncionarioController do
 
       {:error, %Ecto.Changeset{} = changeset} ->
         enderecos = Localizacao.select_enderecos()
-        render(conn, "new.html", changeset: changeset, enderecos: enderecos)
+        sexos = Ator.select_sexo
+        render(conn, "new.html", changeset: changeset, enderecos: enderecos, sexos: sexos)
     end
   end
 
@@ -40,7 +42,8 @@ defmodule SelfWeb.FuncionarioController do
     funcionario = Ator.get_funcionario!(id)
     changeset = Ator.change_funcionario(funcionario)
     enderecos = Localizacao.select_enderecos()
-    render(conn, "edit.html", funcionario: funcionario, changeset: changeset, enderecos: enderecos)
+    sexos = Ator.select_sexo
+    render(conn, "edit.html", funcionario: funcionario, changeset: changeset, enderecos: enderecos, sexos: sexos)
   end
 
   def update(conn, %{"id" => id, "funcionario" => funcionario_params}) do
@@ -54,7 +57,8 @@ defmodule SelfWeb.FuncionarioController do
 
       {:error, %Ecto.Changeset{} = changeset} ->
         enderecos = Localizacao.select_enderecos()
-        render(conn, "edit.html", funcionario: funcionario, changeset: changeset, enderecos: enderecos)
+        sexos = Ator.select_sexo
+        render(conn, "edit.html", funcionario: funcionario, changeset: changeset, enderecos: enderecos, sexos: sexos)
     end
   end
 

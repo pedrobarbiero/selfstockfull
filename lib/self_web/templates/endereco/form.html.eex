@@ -6,7 +6,7 @@
   <% end %>
 
   <%= label f, :cidade_id %>
-  <%= select f, :cidade_id, @cidades %>
+  <%= select f, :cidade_id, @cidades, class: "form-control" %>
   <%= error_tag f, :cidade_id %>
 
   <%= label f, :logradouro %>

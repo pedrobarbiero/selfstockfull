@@ -26,11 +26,11 @@
   <%= error_tag f, :vencimento %>
 
   <%= label f, :funcionario_id %>
-  <%= select f, :funcionario_id, @funcionarios %>
+  <%= select f, :funcionario_id, @funcionarios, class: "form-control" %>
   <%= error_tag f, :funcionario_id %>
   
   <%= label f, :fornecedor_id %>
-  <%= select f, :fornecedor_id, @fornecedores %>
+  <%= select f, :fornecedor_id, @fornecedores, class: "form-control" %>
   <%= error_tag f, :fornecedor_id %>
 
   <div>
