@@ -1,5 +1,7 @@
-<h1>Novo Estado</h1>
+<div class="default-form"> 
+    <h1 class="h1">Novo Estado</h1>
 
-<%= render "form.html", Map.put(assigns, :action, Routes.estado_path(@conn, :create)) %>
+    <%= render "form.html", Map.put(assigns, :action, Routes.estado_path(@conn, :create)) %>
 
-<span><%= link "Voltar", to: Routes.estado_path(@conn, :index) %></span>
+    <span><%= link "Voltar", to: Routes.estado_path(@conn, :index), class: "btn" %></span>
+</div>

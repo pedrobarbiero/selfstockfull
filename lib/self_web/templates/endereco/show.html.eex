@@ -1,8 +1,5 @@
 <div class="default-form"> 
-  <h1>Endereço</h1>
-</div>
-<div class="default-form"> 
-
+  <h1 class="h1">Endereço</h1>
   <ul>
 
     <li>
@@ -24,9 +21,12 @@
       <strong>Bairro:</strong>
       <%= @endereco.bairro %>
     </li>
+    <li>
+      <span><%= link "Editar", to: Routes.endereco_path(@conn, :edit, @endereco), class: "btn" %></span>
+    </li>
+    <li>
+       <span><%= link "Voltar", to: Routes.endereco_path(@conn, :index), class: "btn" %></span>
+    </li>
 
   </ul>
-
-  <span><%= link "Editar", to: Routes.endereco_path(@conn, :edit, @endereco) %></span>
-  <span><%= link "Voltar", to: Routes.endereco_path(@conn, :index) %></span>
 </div>

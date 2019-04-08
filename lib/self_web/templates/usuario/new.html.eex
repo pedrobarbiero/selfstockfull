@@ -1,9 +1,7 @@
 <div class="default-form"> 
-    <h1>Novo Usuario</h1>
-</div>
+    <h1 class="h1">Novo Usuario</h1>
 
-<div class="default-form"> 
     <%= render "form.html", Map.put(assigns, :action, Routes.usuario_path(@conn, :create)) %>
 
-    <span><%= link "Voltar", to: Routes.usuario_path(@conn, :index) %></span>
+    <span><%= link "Voltar", to: Routes.usuario_path(@conn, :index), class: "btn" %></span>
 </div>

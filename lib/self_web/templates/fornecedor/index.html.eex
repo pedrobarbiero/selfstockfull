@@ -1,8 +1,7 @@
 <div class="default-form"> 
-  <h1>Fornecedores</h1>
-</div>
-<div class="default-form"> 
-  <table>
+  <h1 class="h1">Fornecedores</h1>
+
+  <table  class="table table-hover">
     <thead>
       <tr>
         <th>Nome fantasia</th>
@@ -26,14 +25,14 @@
         <td><%= fornecedor.inscrica_estadual %></td>
 
         <td>
-          <%= link "Visualizar", to: Routes.fornecedor_path(@conn, :show, fornecedor) %>
-          <%= link "Editar", to: Routes.fornecedor_path(@conn, :edit, fornecedor) %>
-          <%= link "Excluir", to: Routes.fornecedor_path(@conn, :delete, fornecedor), method: :delete, data: [confirm: "Tem certeza?"] %>
+          <%= link "Visualizar", to: Routes.fornecedor_path(@conn, :show, fornecedor), class: "btn" %>
+          <%= link "Editar", to: Routes.fornecedor_path(@conn, :edit, fornecedor), class: "btn" %>
+          <%= link "Excluir", to: Routes.fornecedor_path(@conn, :delete, fornecedor), method: :delete, data: [confirm: "Tem certeza?"], class: "btn" %>
         </td>
       </tr>
   <% end %>
     </tbody>
   </table>
 
-  <span><%= link "Novo", to: Routes.fornecedor_path(@conn, :new) %></span>
+  <span><%= link "Novo", to: Routes.fornecedor_path(@conn, :new), class: "btn" %></span>
 </div>

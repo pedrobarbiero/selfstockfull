@@ -1,8 +1,7 @@
 <div class="default-form"> 
-    <h1>Alterar Pais</h1>
-</div>
-<div class="default-form"> 
+    <h1 class="h1">Alterar Pais</h1>
+
     <%= render "form.html", Map.put(assigns, :action, Routes.pais_path(@conn, :update, @pais)) %>
 
-    <span><%= link "Voltar", to: Routes.pais_path(@conn, :index) %></span>
+    <span><%= link "Voltar", to: Routes.pais_path(@conn, :index), class: "btn" %></span>
 </div>

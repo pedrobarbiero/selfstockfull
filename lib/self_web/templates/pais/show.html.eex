@@ -1,16 +1,17 @@
-<div class="default-form">   
-  <h1>Visualizar Pais</h1>
-</div>
-  <div class="default-form"> 
-  <ul>
+<div class="default-form"> 
 
+  <h1 class="h1">Pais</h1>
+
+  <ul>
     <li>
       <strong>Nome:</strong>
       <%= @pais.nome %>
     </li>
-
+    <li>
+      <span><%= link "Editar", to: Routes.pais_path(@conn, :edit, @pais), class: "btn" %></span>
+    </li>
+    <li>
+      <span><%= link "Voltar", to: Routes.pais_path(@conn, :index), class: "btn" %></span>
+    </li>
   </ul>
-
-  <span><%= link "Editar", to: Routes.pais_path(@conn, :edit, @pais) %></span>
-  <span><%= link "Voltar", to: Routes.pais_path(@conn, :index) %></span>
 </div>

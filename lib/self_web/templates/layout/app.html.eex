@@ -9,122 +9,101 @@
     <title>Self Stock WEB</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
     <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
-    <nav class="orange darken-4">
-          <div class="row">
+      <nav class="row">
         <div class="col-10">
-            <section class="menu menu--circle ">
-          <input type="checkbox" id="menu__active"/>
-          <label for="menu__active" class="menu__active">
-            <div class="menu__toggle">
-              <div class="icon">
-                <div class="hamburger"></div>
+          <section class="menu menu--circle ">
+            <input type="checkbox" id="menu__active"/>
+            <label for="menu__active" class="menu__active">
+              <div class="menu__toggle">
+                <div class="icon">
+                  <div class="hamburger"></div>
+                </div>
               </div>
-            </div>
-            <input type="radio" name="arrow--up" id="degree--up-0"/>
-            <input type="radio" name="arrow--up" id="degree--up-1" />
-            <input type="radio" name="arrow--up" id="degree--up-2" />
-            <div class="menu__listings">
-              <ul class="circle">
-              <li>
-<<<<<<< HEAD
-                  <div class="placeholder">
-                    <div class="upside">
-                      <a href="/" class="button"><i class="fas fa-home"></i></i></a>
-                    </div>
-                  </div>
-                </li>      
+              <input type="radio" name="arrow--up" id="degree--up-0"/>
+              <input type="radio" name="arrow--up" id="degree--up-1" />
+              <input type="radio" name="arrow--up" id="degree--up-2" />
+              <div class="menu__listings">
+                <ul class="circle">
                 <li>
-                  <div class="placeholder">
-                    <div class="upside">
-                      <%= link  to: Routes.usuario_path(@conn, :index) , class: "button" do  %>
-                        <i class="fa fa-user"></i>
-                      <%= end %>
+                    <div class="placeholder">
+                      <div class="upside">
+                        <a href="/" class="button"><i class="fas fa-home"></i></i></a>
+                      </div>
                     </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="placeholder">
-                    <div class="upside">
-                      <a href="/produtos" class="button"><i class="fas fa-box"></i></a>
+                  </li>      
+                  <li>
+                    <div class="placeholder">
+                      <div class="upside">
+                        <%= link  to: Routes.usuario_path(@conn, :index) , class: "button" do  %>
+                          <i class="fa fa-user"></i>
+                        <%= end %>
+                      </div>
                     </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="placeholder">
-                    <div class="upside">
-                      <a href="/produtos" class="button"><i class="fas fa-box"></i></a>
+                  </li>
+                  <li>
+                    <div class="placeholder">
+                      <div class="upside">
+                        <a href="/produtos" class="button"><i class="fas fa-box"></i></a>
+                      </div>
                     </div>
-                  </div>
-                </li>     
-                 <li>
-                  <div class="placeholder">
-                    <div class="upside">
-                      <a href="/paises" class="button"><i class="fas fa-globe-americas"></i></a>
+                  </li>
+                  <li>
+                    <div class="placeholder">
+                      <div class="upside">
+                        <a href="/produtos" class="button"><i class="fas fa-box"></i></a>
+                      </div>
                     </div>
-                  </div>
-                </li>   
-                 <li>
-                  <div class="placeholder">
-                    <div class="upside">
-                       <a href="/fornecedores" class="button"><i class="fas fa-hands-helping"></i></a>
-=======
-                  <div class="placeholder">
-                    <div class="upside">
-                      <a href="/" class="button"><i class="fas fa-home"></i></i></a>
+                  </li>     
+                  <li>
+                    <div class="placeholder">
+                      <div class="upside">
+                        <a href="/fornecedores" class="button"><i class="fas fa-hands-helping"></i></a>
+                      </div>
                     </div>
-                  </div>
-                </li>      
-                <li>
-                  <div class="placeholder">
-                    <div class="upside">
-                      <%= link  to: Routes.pais_path(@conn, :index) , class: "button" do  %>
-                        <i class="fa fa-user"></i>
-                      <%= end %>
->>>>>>> acdc9eb13a2938ec99a3cd1b47c6f2d683befa22
+                  </li>      
+                  <li>
+                    <div class="placeholder">
+                      <div class="upside">
+                        <a href="/paises" class="button"><i class="fas fa-globe-americas"></i></a>
+                      </div>
                     </div>
-                  </div>
-                </li>      
-                <li>
-                  <div class="placeholder">
-                    <div class="upside">
-<<<<<<< HEAD
-                       <a href="/enderecos" class="button"><i class="fas fa-map-marked-alt"></i></a>
-=======
-                      <a href="/produtos" class="button"><i class="fas fa-box"></i></a>
->>>>>>> acdc9eb13a2938ec99a3cd1b47c6f2d683befa22
+                  </li>            
+                  <li>
+                    <div class="placeholder">
+                      <div class="upside">
+                        <a href="/estados" class="button"><i class="fas fa-flag"></i></a>
+                      </div>
                     </div>
-                  </div>
-                </li> 
-                <li>
-                  <div class="placeholder">
-                    <div class="upside">
-<<<<<<< HEAD
-                       <a href="/cidades" class="button"><i class="fas fa-city"></i></a>
+                  </li>
+                  <li>
+                    <div class="placeholder">
+                      <div class="upside">
+                        <a href="/cidades" class="button"><i class="fas fa-city"></i></a>
+                      </div>
                     </div>
-                  </div>
-                </li>  
-=======
-                      <a href="/produtos" class="button"><i class="fas fa-box"></i></a>
+                  </li>
+                   <li>
+                    <div class="placeholder">
+                      <div class="upside">
+                          <a href="/enderecos" class="button"><i class="fas fa-map-marked-alt"></i></a>
+                      </div>
                     </div>
-                  </div>
-                </li>          
->>>>>>> acdc9eb13a2938ec99a3cd1b47c6f2d683befa22
-              </ul>
-            </div>
-            <div class="menu__arrow menu__arrow--top">
-              <ul>
-                <li>
-                  <label for="degree--up-0"><div class="arrow"></div></label>
-                  <label for="degree--up-1"><div class="arrow"></div></label>
-                  <label for="degree--up-2"><div class="arrow"></div></label>
-                </li>
-              </ul>
-            </div>
-          </label>
+                  </li>      
+                </ul>
+              </div>
+              <div class="menu__arrow menu__arrow--top">
+                <ul>
+                  <li>
+                    <label for="degree--up-0"><div class="arrow"></div></label>
+                    <label for="degree--up-1"><div class="arrow"></div></label>
+                    <label for="degree--up-2"><div class="arrow"></div></label>
+                  </li>
+                </ul>
+              </div>
+            </label>
         </section>
       </div>
       <div class="nav-wrapper container">
-      
         <a href="#" class="brand-logo"></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
               <%= if @conn.assigns[:user] do %>
@@ -149,32 +128,19 @@
               <%= end %>
         </ul>
       </div>
-    </nav>
+  </nav>
   </head>
   <body>
-    <header>
-        <style>
-    </style>
-  <br><br><br>
-    </header>
      <main role="main" class="container">
         <div class="row">
-<<<<<<< HEAD
             <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
             <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
             <%= render @view_module, @view_template, assigns %>
-=======
-          <div class="default-form">
-            <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
-            <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
-            <%= render @view_module, @view_template, assigns %>
-          </div>
->>>>>>> acdc9eb13a2938ec99a3cd1b47c6f2d683befa22
         </div>
     </main>
     <footer id="contact" class="footer">             
                                     <div class="widget_brand m-top-40 col-md-12"  style='text-align: center'>
-                                        <a href="" class="text-uppercase"><img class="img-thumbnail" src="https://raw.githubusercontent.com/ebasantos/estoque-web-app-front-end/master/src/img/self%20stock.png" class="img-thumbnail"  style='background-color: transparent; width: 100px;' alt="Self-Stock-WEB" />
+                                        <a href="/" class="text-uppercase"><img class="img-thumbnail" src="https://raw.githubusercontent.com/ebasantos/estoque-web-app-front-end/master/src/img/self%20stock.png" class="img-thumbnail"  style='background-color: transparent; width: 100px;' alt="Self-Stock-WEB" />
                                         </a>
                                         <p class="text-white">A melhor solução em controle de estoque!</p>
                                     </div>

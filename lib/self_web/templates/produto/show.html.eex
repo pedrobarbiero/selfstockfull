@@ -1,7 +1,6 @@
 <div class="default-form">   
-  <h1>Produto</h1>
-</div>
-<div class="default-form">   
+  <h1 class="h1">Produto</h1>
+
   <ul>
 
     <li>
@@ -28,9 +27,14 @@
       <strong>Tipo:</strong>
       <%= @produto.tipo %>
     </li>
-
+    <li>
+      <span><%= link "Alterar", to: Routes.produto_path(@conn, :edit, @produto), class: "btn" %></span>
+    </li>
+    <li>
+      <span><%= link "Voltar", to: Routes.produto_path(@conn, :index), class: "btn" %></span>
+    </li>
   </ul>
 
-  <span><%= link "Alterar", to: Routes.produto_path(@conn, :edit, @produto) %></span>
-  <span><%= link "Voltar", to: Routes.produto_path(@conn, :index) %></span>
+  
+  
 </div>

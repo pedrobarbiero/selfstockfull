@@ -1,9 +1,7 @@
 <div class="default-form"> 
-    <h1>Altar Fornecedor</h1>
-<div>
-<div class="default-form"> 
+    <h1 class="h1">Altar Fornecedor</h1>
     <%= render "form.html", Map.put(assigns, :action, Routes.fornecedor_path(@conn, :update, @fornecedor)) %>
 
-    <span><%= link "Voltar", to: Routes.fornecedor_path(@conn, :index) %></span>
+    <span><%= link "Voltar", to: Routes.fornecedor_path(@conn, :index), class: "btn" %></span>
 
 </div>

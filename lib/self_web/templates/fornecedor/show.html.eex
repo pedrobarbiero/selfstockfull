@@ -1,38 +1,42 @@
-<h1>Visualizar Fornecedor</h1>
+<div class="default-form"> 
+  <h1 class="h1">Fornecedor</h1>
 
-<ul>
+  <ul>
 
-  <li>
-    <strong>Nome fantasia:</strong>
-    <%= @fornecedor.nome_fantasia %>
-  </li>
+    <li>
+      <strong>Nome fantasia:</strong>
+      <%= @fornecedor.nome_fantasia %>
+    </li>
 
-  <li>
-    <strong>Razao social:</strong>
-    <%= @fornecedor.razao_social %>
-  </li>
+    <li>
+      <strong>Razao social:</strong>
+      <%= @fornecedor.razao_social %>
+    </li>
 
-  <li>
-    <strong>Email:</strong>
-    <%= @fornecedor.email %>
-  </li>
+    <li>
+      <strong>Email:</strong>
+      <%= @fornecedor.email %>
+    </li>
 
-  <li>
-    <strong>Cnpj:</strong>
-    <%= @fornecedor.cnpj %>
-  </li>
+    <li>
+      <strong>Cnpj:</strong>
+      <%= @fornecedor.cnpj %>
+    </li>
 
-  <li>
-    <strong>Telefone:</strong>
-    <%= @fornecedor.telefone %>
-  </li>
+    <li>
+      <strong>Telefone:</strong>
+      <%= @fornecedor.telefone %>
+    </li>
 
-  <li>
-    <strong>Inscrica estadual:</strong>
-    <%= @fornecedor.inscrica_estadual %>
-  </li>
-
-</ul>
-
-<span><%= link "Editar", to: Routes.fornecedor_path(@conn, :edit, @fornecedor) %></span>
-<span><%= link "Voltar", to: Routes.fornecedor_path(@conn, :index) %></span>
+    <li>
+      <strong>Inscrica estadual:</strong>
+      <%= @fornecedor.inscrica_estadual %>
+    </li>
+    <li>
+      <span><%= link "Editar", to: Routes.fornecedor_path(@conn, :edit, @fornecedor), class: "btn" %></span>
+    </li>
+    <li>
+     <span><%= link "Voltar", to: Routes.fornecedor_path(@conn, :index), class: "btn" %></span>
+    </li>
+  </ul>
+</div>

@@ -1,8 +1,6 @@
 <div class="default-form"> 
-  <h1>Endereços</h1>
-</div>
-<div class="default-form"> 
-  <table>
+  <h1 class="h1">Endereços</h1>
+  <table  class="table table-hover">
     <thead>
       <tr>
         <th>Logradouro</th>
@@ -22,14 +20,14 @@
         <td><%= endereco.bairro %></td>
 
         <td>
-          <%= link "Exibir", to: Routes.endereco_path(@conn, :show, endereco) %>
-          <%= link "Editar", to: Routes.endereco_path(@conn, :edit, endereco) %>
-          <%= link "Excluir", to: Routes.endereco_path(@conn, :delete, endereco), method: :delete, data: [confirm: "Certeza?"] %>
+          <%= link "Exibir", to: Routes.endereco_path(@conn, :show, endereco), class: "btn" %>
+          <%= link "Editar", to: Routes.endereco_path(@conn, :edit, endereco), class: "btn" %>
+          <%= link "Excluir", to: Routes.endereco_path(@conn, :delete, endereco), method: :delete, data: [confirm: "Certeza?"], class: "btn" %>
         </td>
       </tr>
   <% end %>
     </tbody>
   </table>
 
-  <span><%= link "Novo", to: Routes.endereco_path(@conn, :new) %></span>
+  <span><%= link "Novo", to: Routes.endereco_path(@conn, :new), class: "btn" %></span>
 </div>
