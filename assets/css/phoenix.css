@@ -31,21 +31,25 @@ select {
 .alert {
   padding: 15px;
   margin-bottom: 20px;
+  font-weight: bold;
   border: 1px solid transparent;
   border-radius: 4px;
 }
 .alert-info {
-  color: #31708f;
-  background-color: #d9edf7;
-  border-color: #bce8f1;
+  font-weight: bold;
+  color: #000000;
+  background-color: #56cf56;
+  border-color: #220c05;
 }
 .alert-warning {
   color: #8a6d3b;
+  font-weight: bold;
   background-color: #fcf8e3;
   border-color: #faebcc;
 }
 .alert-danger {
-  color: rgb(240, 238, 238);
+  color: rgb(0, 1, 3);
+  font-weight: bold;
   background-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);
   border-color: #f1edee;
   
@@ -440,3 +444,25 @@ body{
 }
 
 /* end login buttons */
+
+/* start default form */
+.default-form{
+  background-color: rgba(248, 240, 240, 0.89);
+  border: solid rgba(5, 9, 17, 0.877) 2px;
+  border-radius: 5px;
+  min-width: 800px;
+  display: flex;
+  flex-flow: wrap;
+  padding: 30px;
+}
+
+.default-form .h {
+  max-width: 500px;
+  
+}
+
+.btn {
+  text-decoration:none;
+  color: inherit;
+}
+/* end default form */

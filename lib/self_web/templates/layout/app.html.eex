@@ -26,10 +26,17 @@
             <input type="radio" name="arrow--up" id="degree--up-2" />
             <div class="menu__listings">
               <ul class="circle">
+              <li>
+                  <div class="placeholder">
+                    <div class="upside">
+                      <a href="/" class="button"><i class="fas fa-home"></i></i></a>
+                    </div>
+                  </div>
+                </li>      
                 <li>
                   <div class="placeholder">
                     <div class="upside">
-                      <%= link  to: Routes.pais_path(@conn, :index) , class: "button" do  %>
+                      <%= link  to: Routes.usuario_path(@conn, :index) , class: "button" do  %>
                         <i class="fa fa-user"></i>
                       <%= end %>
                     </div>
@@ -38,66 +45,45 @@
                 <li>
                   <div class="placeholder">
                     <div class="upside">
-                      <a href="#" class="button"><i class="fa fa-cog"></i></a>
+                      <a href="/produtos" class="button"><i class="fas fa-box"></i></a>
                     </div>
                   </div>
                 </li>
                 <li>
                   <div class="placeholder">
                     <div class="upside">
-                      <a href="#">&nbsp</a>
+                      <a href="/produtos" class="button"><i class="fas fa-box"></i></a>
                     </div>
                   </div>
-                </li>
+                </li>     
+                 <li>
+                  <div class="placeholder">
+                    <div class="upside">
+                      <a href="/paises" class="button"><i class="fas fa-globe-americas"></i></a>
+                    </div>
+                  </div>
+                </li>   
+                 <li>
+                  <div class="placeholder">
+                    <div class="upside">
+                       <a href="/fornecedores" class="button"><i class="fas fa-hands-helping"></i></a>
+                    </div>
+                  </div>
+                </li>      
                 <li>
                   <div class="placeholder">
                     <div class="upside">
-                      <a href="#" class="button"><i class="fa fa-commenting"></i></a>
+                       <a href="/enderecos" class="button"><i class="fas fa-map-marked-alt"></i></a>
                     </div>
                   </div>
-                </li>
+                </li> 
                 <li>
                   <div class="placeholder">
                     <div class="upside">
-                      <a href="#" class="button"><i class="fa fa-trash"></i></a>
+                       <a href="/cidades" class="button"><i class="fas fa-city"></i></a>
                     </div>
                   </div>
-                </li>
-                <li>
-                  <div class="placeholder">
-                    <div class="upside">
-                      <a href="#" class="button"><i class="fa fa-battery-4"></i></a>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="placeholder">
-                    <div class="upside">
-                      <a href="#" class="button"><i class="fa fa-calendar"></i></a>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="placeholder">
-                    <div class="upside">
-                      <a href="#" class="button"><i class="fa fa-cloud"></i></a>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="placeholder">
-                    <div class="upside">
-                      <a href="#" class="button"><i class="fa fa-wifi"></i></a>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="placeholder">
-                    <div class="upside">
-                      <a href="#" class="button"><i class="fa fa-envelope-o"></i></a>
-                    </div>
-                  </div>
-                </li>
+                </li>  
               </ul>
             </div>
             <div class="menu__arrow menu__arrow--top">
@@ -142,9 +128,9 @@
     </header>
      <main role="main" class="container">
         <div class="row">
-          <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
-          <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
-          <%= render @view_module, @view_template, assigns %>
+            <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
+            <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+            <%= render @view_module, @view_template, assigns %>
         </div>
     </main>
     <footer id="contact" class="footer">             

@@ -1,32 +1,36 @@
-<h1>Lista de Usuarios</h1>
+<div class="default-form"> 
+  <h1>Lista de Usuarios</h1>
+</div>
+<div class="default-form"> 
+  <table>
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Provider</th>
+        <th>Email</th>
+        <%=#<th>Token</th> %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Nome</th>
-      <th>Provider</th>
-      <th>Email</th>
-      <%=#<th>Token</th> %>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+    
+  <%= for usuario <- @usuarios do %>
+      <tr>
+        <td><%= usuario.nome %></td>
+        <td><%= usuario.provider %></td>
+        <td><%= usuario.email %></td>
+        <%= #<td><%= usuario.token </td>%>
 
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-<%= for usuario <- @usuarios do %>
-    <tr>
-      <td><%= usuario.nome %></td>
-      <td><%= usuario.provider %></td>
-      <td><%= usuario.email %></td>
-      <%= #<td><%= usuario.token </td>%>
+        <td>
+          <%= link "Visualizar", to: Routes.usuario_path(@conn, :show, usuario) %>
+          <%= link "Alterar", to: Routes.usuario_path(@conn, :edit, usuario) %>
+          <%= link "Excluir", to: Routes.usuario_path(@conn, :delete, usuario), method: :delete, data: [confirm: "Tem certeza?"] %>
+        </td>
+      </tr>
+  <% end %>
+    </tbody>
+  </table>
 
-      <td>
-        <%= link "Visualizar", to: Routes.usuario_path(@conn, :show, usuario) %>
-        <%= link "Alterar", to: Routes.usuario_path(@conn, :edit, usuario) %>
-        <%= link "Excluir", to: Routes.usuario_path(@conn, :delete, usuario), method: :delete, data: [confirm: "Tem certeza?"] %>
-      </td>
-    </tr>
-<% end %>
-  </tbody>
-</table>
-
-<span><%= link "Novo Usuario", to: Routes.usuario_path(@conn, :new) %></span>
+  <span><%= link "Novo Usuario", to: Routes.usuario_path(@conn, :new) %></span>
+</div>

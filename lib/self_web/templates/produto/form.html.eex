@@ -4,6 +4,8 @@
       <p>Oops, algo deu errado! Por favor veja os erros abaixo.</p>      
     </div>
   <% end %>
+  
+<div class="default-form">
 
   <%= label f, :nome %>
   <%= text_input f, :nome %>
@@ -24,8 +26,8 @@
   <%= label f, :tipo %>
   <%= number_input f, :tipo %>
   <%= error_tag f, :tipo %>
-
   <div>
     <%= submit "Salvar" %>
   </div>
 <% end %>
+

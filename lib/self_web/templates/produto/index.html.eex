@@ -1,34 +1,39 @@
-<h1>Produtos</h1>
+<div class="default-form">    
+  <h1>Produtos</h1>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Nome</th>
-      <th>Descricao</th>
-      <th>Valor compra</th>
-      <th>Valor venda</th>
-      <th>Tipo</th>
+<div class="default-form">    
+  <table>
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Descricao</th>
+        <th>Valor compra</th>
+        <th>Valor venda</th>
+        <th>Tipo</th>
 
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-<%= for produto <- @produtos do %>
-    <tr>
-      <td><%= produto.nome %></td>
-      <td><%= produto.descricao %></td>
-      <td><%= produto.valor_compra %></td>
-      <td><%= produto.valor_venda %></td>
-      <td><%= produto.tipo %></td>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+  <%= for produto <- @produtos do %>
+      <tr>
+        <td><%= produto.nome %></td>
+        <td><%= produto.descricao %></td>
+        <td><%= produto.valor_compra %></td>
+        <td><%= produto.valor_venda %></td>
+        <td><%= produto.tipo %></td>
 
-      <td>
-        <%= link "Visualizar", to: Routes.produto_path(@conn, :show, produto) %>
-        <%= link "Alterar", to: Routes.produto_path(@conn, :edit, produto) %>
-        <%= link "Excluir", to: Routes.produto_path(@conn, :delete, produto), method: :delete, data: [confirm: "Tem certeza?"] %>
-      </td>
-    </tr>
-<% end %>
-  </tbody>
-</table>
+        <td>
+          <%= link "Visualizar", to: Routes.produto_path(@conn, :show, produto) %>
+          <%= link "Alterar", to: Routes.produto_path(@conn, :edit, produto) %>
+          <%= link "Excluir", to: Routes.produto_path(@conn, :delete, produto), method: :delete, data: [confirm: "Tem certeza?"] %>
+        </td>
+      </tr>
+  <% end %>
+    </tbody>
+  </table>
 
-<span><%= link "Novo Produto", to: Routes.produto_path(@conn, :new) %></span>
+
+  <span><%= link "Novo Produto", to: Routes.produto_path(@conn, :new) %></span>
+</div>

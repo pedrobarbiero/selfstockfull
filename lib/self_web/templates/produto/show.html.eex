@@ -1,33 +1,36 @@
-<h1>Produto</h1>
+<div class="default-form">   
+  <h1>Produto</h1>
+</div>
+<div class="default-form">   
+  <ul>
 
-<ul>
+    <li>
+      <strong>Nome:</strong>
+      <%= @produto.nome %>
+    </li>
 
-  <li>
-    <strong>Nome:</strong>
-    <%= @produto.nome %>
-  </li>
+    <li>
+      <strong>Descricao:</strong>
+      <%= @produto.descricao %>
+    </li>
 
-  <li>
-    <strong>Descricao:</strong>
-    <%= @produto.descricao %>
-  </li>
+    <li>
+      <strong>Valor compra:</strong>
+      <%= @produto.valor_compra %>
+    </li>
 
-  <li>
-    <strong>Valor compra:</strong>
-    <%= @produto.valor_compra %>
-  </li>
+    <li>
+      <strong>Valor venda:</strong>
+      <%= @produto.valor_venda %>
+    </li>
 
-  <li>
-    <strong>Valor venda:</strong>
-    <%= @produto.valor_venda %>
-  </li>
+    <li>
+      <strong>Tipo:</strong>
+      <%= @produto.tipo %>
+    </li>
 
-  <li>
-    <strong>Tipo:</strong>
-    <%= @produto.tipo %>
-  </li>
+  </ul>
 
-</ul>
-
-<span><%= link "Alterar", to: Routes.produto_path(@conn, :edit, @produto) %></span>
-<span><%= link "Voltar", to: Routes.produto_path(@conn, :index) %></span>
+  <span><%= link "Alterar", to: Routes.produto_path(@conn, :edit, @produto) %></span>
+  <span><%= link "Voltar", to: Routes.produto_path(@conn, :index) %></span>
+</div>
