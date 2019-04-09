@@ -5,6 +5,7 @@
     <thead>
       <tr>
         <th>Quantidade</th>
+        <th>Valor Unitário</th>
 
         <th></th>
       </tr>
@@ -13,6 +14,7 @@
   <%= for item_venda <- @itens_venda do %>
       <tr>
         <td><%= item_venda.quantidade %></td>
+        <td><%= item_venda.valor %></td>
 
         <td>
           <%= link "Exibir", to: Routes.item_venda_path(@conn, :show, item_venda), class: "btn" %>

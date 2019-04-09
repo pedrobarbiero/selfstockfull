@@ -21,11 +21,10 @@
     <%= submit "Salvar" %>
   </div>
 
-<table>
+<table class="table table-hover">
   <thead>
     <tr>
       <th>Quantidade</th>
-
       <th></th>
     </tr>
   </thead>
@@ -33,9 +32,8 @@
 <%= for item_venda <- @itens_venda do %>
     <tr>
       <td><%= item_venda.quantidade %></td>
-
       <td>       
-        <%= link "Excluir", to: Routes.item_venda_path(@conn, :delete, item_venda), method: :delete, data: [confirm: "Tem certeza?"] %>
+        <%= link "Excluir", to: Routes.item_venda_path(@conn, :delete, item_venda), method: :delete, data: [confirm: "Tem certeza?"], class: "btn" %>
       </td>
     </tr>
 <% end %>

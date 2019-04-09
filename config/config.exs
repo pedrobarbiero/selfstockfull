@@ -48,8 +48,8 @@ config :ueberauth, Ueberauth.Strategy.Facebook.OAuth,
   # client_secret: "c9b1a2b913707c2a83f5a2dd7ae376cf"
 
 config :ueberauth, Ueberauth.Strategy.Github.OAuth,
-  client_id: "b061d88b11771d6084cc",
-  client_secret: "7c8992c1039e6c6eb5e29da2fac1f473b0db161b"
+  client_id: "41fc68cc81780eb0fe50",
+  client_secret: "14ae564a2eebd9371eda6b992f0bfc9074c3236f"
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
