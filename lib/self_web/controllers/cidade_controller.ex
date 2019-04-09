@@ -4,6 +4,8 @@ defmodule SelfWeb.CidadeController do
   alias Self.Localizacao
   alias Self.Localizacao.Cidade
 
+  plug SelfWeb.Plug.RequireAuth when action in [:index, :edit, :new, :show, :create, :update, :delete]
+
   def index(conn, _params) do
     cidades = Localizacao.list_cidades()
     render(conn, "index.html", cidades: cidades)
@@ -19,7 +21,7 @@ defmodule SelfWeb.CidadeController do
     case Localizacao.create_cidade(cidade_params) do
       {:ok, cidade} ->
         conn
-        |> put_flash(:info, "Cidade created successfully.")
+        |> put_flash(:info, "Cidade criada com sucesso.")
         |> redirect(to: Routes.cidade_path(conn, :show, cidade))
 
       {:error, %Ecto.Changeset{} = changeset} ->
@@ -46,7 +48,7 @@ defmodule SelfWeb.CidadeController do
     case Localizacao.update_cidade(cidade, cidade_params) do
       {:ok, cidade} ->
         conn
-        |> put_flash(:info, "Cidade updated successfully.")
+        |> put_flash(:info, "Cidade atualizada com sucesso.")
         |> redirect(to: Routes.cidade_path(conn, :show, cidade))
 
       {:error, %Ecto.Changeset{} = changeset} ->
@@ -59,7 +61,7 @@ defmodule SelfWeb.CidadeController do
     {:ok, _cidade} = Localizacao.delete_cidade(cidade)
 
     conn
-    |> put_flash(:info, "Cidade deleted successfully.")
+    |> put_flash(:info, "Cidade excluida com sucesso.")
     |> redirect(to: Routes.cidade_path(conn, :index))
   end
 end

@@ -18,6 +18,18 @@ defmodule Self.Ator.Cliente do
   def changeset(cliente, attrs) do
     cliente
     |> cast(attrs, [:nome, :data_nascimento, :email, :cpf, :sexo, :telefone, :endereco_id])
+    |> valida_cpf(:cpf)
     |> validate_required([:nome, :data_nascimento, :email, :cpf, :sexo, :telefone, :endereco_id])
   end
+
+  def valida_cpf(changeset, field, options \\ []) do
+    validate_change(changeset, field, fn _, cpf ->
+      number = %Cpf{number: cpf}
+      case Brcpfcnpj.cpf_valid?(number) do
+        true -> []
+        false -> [{field, options[:message] || "cpf inválido"}]
+      end
+    end)
+  end
+
 end

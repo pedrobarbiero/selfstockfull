@@ -1,13 +1,18 @@
-<h1>Cidade</h1>
+<div class="default-form"> 
+  <h1 class="h1">Cidade</h1>
 
-<ul>
+  <ul>
 
-  <li>
-    <strong>Nome:</strong>
-    <%= @cidade.nome %>
-  </li>
+    <li>
+      <strong>Nome:</strong>
+      <%= @cidade.nome %>
+    </li>
+      <li>
+        <span><%= link "Editar", to: Routes.cidade_path(@conn, :edit, @cidade), class: "btn" %></span>
+      </li>
+      <li>
+         <span><%= link "Voltar", to: Routes.cidade_path(@conn, :index), class: "btn" %></span>
+      </li>
 
-</ul>
-
-<span><%= link "Editar", to: Routes.cidade_path(@conn, :edit, @cidade) %></span>
-<span><%= link "Voltar", to: Routes.cidade_path(@conn, :index) %></span>
+  </ul> 
+</div>

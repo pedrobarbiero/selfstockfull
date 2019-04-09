@@ -1,0 +1,7 @@
+<div class="default-form">   
+    <h1 class="h1">Alterar Produto</h1>
+
+    <%= render "form.html", Map.put(assigns, :action, Routes.produto_path(@conn, :update, @produto)) %>
+
+    <span><%= link "Voltar", to: Routes.produto_path(@conn, :index), class: "btn" %></span>
+</div>

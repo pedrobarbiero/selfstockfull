@@ -1,28 +1,32 @@
-<h1>Endereço</h1>
+<div class="default-form"> 
+  <h1 class="h1">Endereço</h1>
+  <ul>
 
-<ul>
+    <li>
+      <strong>Logradouro:</strong>
+      <%= @endereco.logradouro %>
+    </li>
 
-  <li>
-    <strong>Logradouro:</strong>
-    <%= @endereco.logradouro %>
-  </li>
+    <li>
+      <strong>Numero:</strong>
+      <%= @endereco.numero %>
+    </li>
 
-  <li>
-    <strong>Numero:</strong>
-    <%= @endereco.numero %>
-  </li>
+    <li>
+      <strong>Cep:</strong>
+      <%= @endereco.cep %>
+    </li>
 
-  <li>
-    <strong>Cep:</strong>
-    <%= @endereco.cep %>
-  </li>
+    <li>
+      <strong>Bairro:</strong>
+      <%= @endereco.bairro %>
+    </li>
+    <li>
+      <span><%= link "Editar", to: Routes.endereco_path(@conn, :edit, @endereco), class: "btn" %></span>
+    </li>
+    <li>
+       <span><%= link "Voltar", to: Routes.endereco_path(@conn, :index), class: "btn" %></span>
+    </li>
 
-  <li>
-    <strong>Bairro:</strong>
-    <%= @endereco.bairro %>
-  </li>
-
-</ul>
-
-<span><%= link "Editar", to: Routes.endereco_path(@conn, :edit, @endereco) %></span>
-<span><%= link "Voltar", to: Routes.endereco_path(@conn, :index) %></span>
+  </ul>
+</div>

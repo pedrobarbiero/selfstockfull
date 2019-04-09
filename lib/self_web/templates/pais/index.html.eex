@@ -1,26 +1,27 @@
-<h1>Paises</h1>
+<div class="default-form"> 
+  <h1 class="h1">Paises</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Nome</th>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Nome</th>
 
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-<%= for pais <- @paises do %>
-    <tr>
-      <td><%= pais.nome %></td>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+  <%= for pais <- @paises do %>
+      <tr>
+        <td scope="col" ><%= pais.nome %></td>
+        <td >
+          <%= link "Visualizar", to: Routes.pais_path(@conn, :show, pais), class: "btn" %>
+          <%= link "Editar", to: Routes.pais_path(@conn, :edit, pais), class: "btn" %>
+          <%= link "Excluir", to: Routes.pais_path(@conn, :delete, pais), method: :delete, data: [confirm: "Tem certeza?"] , class: "btn"%>
+        </td>
+      </tr>
+  <% end %>
+    </tbody>
+  </table>
 
-      <td>
-        <%= link "Visualizar", to: Routes.pais_path(@conn, :show, pais) %>
-        <%= link "Editar", to: Routes.pais_path(@conn, :edit, pais) %>
-        <%= link "Excluir", to: Routes.pais_path(@conn, :delete, pais), method: :delete, data: [confirm: "Tem certeza?"] %>
-      </td>
-    </tr>
-<% end %>
-  </tbody>
-</table>
-
-<span><%= link "Novo", to: Routes.pais_path(@conn, :new) %></span>
+  <span><%= link "Novo", to: Routes.pais_path(@conn, :new), class: "btn" %></span>
+</div>

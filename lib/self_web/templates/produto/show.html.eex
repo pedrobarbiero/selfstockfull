@@ -1,0 +1,40 @@
+<div class="default-form">   
+  <h1 class="h1">Produto</h1>
+
+  <ul>
+
+    <li>
+      <strong>Nome:</strong>
+      <%= @produto.nome %>
+    </li>
+
+    <li>
+      <strong>Descricao:</strong>
+      <%= @produto.descricao %>
+    </li>
+
+    <li>
+      <strong>Valor compra:</strong>
+      <%= @produto.valor_compra %>
+    </li>
+
+    <li>
+      <strong>Valor venda:</strong>
+      <%= @produto.valor_venda %>
+    </li>
+
+    <li>
+      <strong>Tipo:</strong>
+      <%= @produto.tipo %>
+    </li>
+    <li>
+      <span><%= link "Alterar", to: Routes.produto_path(@conn, :edit, @produto), class: "btn" %></span>
+    </li>
+    <li>
+      <span><%= link "Voltar", to: Routes.produto_path(@conn, :index), class: "btn" %></span>
+    </li>
+  </ul>
+
+  
+  
+</div>

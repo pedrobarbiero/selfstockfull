@@ -1,0 +1,28 @@
+<h1>Itens de compra</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Quantidade</th>
+      <th>Valor unitario</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for item_compra <- @itens_compra do %>
+    <tr>
+      <td><%= item_compra.quantidade %></td>
+      <td><%= item_compra.valor_unitario %></td>
+
+      <td>
+        <%= link "Visualizar", to: Routes.item_compra_path(@conn, :show, item_compra), class: "btn" %>
+        <%= link "Alterar", to: Routes.item_compra_path(@conn, :edit, item_compra), class: "btn" %>
+        <%= link "Excluir", to: Routes.item_compra_path(@conn, :delete, item_compra), method: :delete, data: [confirm: "Tem certeza?"], class: "btn" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "Novo Item de compra", to: Routes.item_compra_path(@conn, :new) %></span>

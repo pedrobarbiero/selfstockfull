@@ -1,38 +1,43 @@
-<h1>Cliente</h1>
+<div class="default-form">   
+  <h1 class="h1">Cliente</h1>
 
-<ul>
+  <ul>
 
-  <li>
-    <strong>Nome:</strong>
-    <%= @cliente.nome %>
-  </li>
+    <li>
+      <strong>Nome:</strong>
+      <%= @cliente.nome %>
+    </li>
 
-  <li>
-    <strong>Data nascimento:</strong>
-    <%= @cliente.data_nascimento %>
-  </li>
+    <li>
+      <strong>Data nascimento:</strong>
+      <%= @cliente.data_nascimento %>
+    </li>
 
-  <li>
-    <strong>Email:</strong>
-    <%= @cliente.email %>
-  </li>
+    <li>
+      <strong>Email:</strong>
+      <%= @cliente.email %>
+    </li>
 
-  <li>
-    <strong>Cpf:</strong>
-    <%= @cliente.cpf %>
-  </li>
+    <li>
+      <strong>Cpf:</strong>
+      <%= @cliente.cpf %>
+    </li>
 
-  <li>
-    <strong>Sexo:</strong>
-    <%= @cliente.sexo %>
-  </li>
+    <li>
+      <strong>Sexo:</strong>
+      <%= @cliente.sexo %>
+    </li>
 
-  <li>
-    <strong>Telefone:</strong>
-    <%= @cliente.telefone %>
-  </li>
+    <li>
+      <strong>Telefone:</strong>
+      <%= @cliente.telefone %>
+    </li>
+    <li>
+       <span><%= link "Editar", to: Routes.cliente_path(@conn, :edit, @cliente), class: "btn" %></span>
+    </li>
+    <li>
+      <span><%= link "Voltar", to: Routes.cliente_path(@conn, :index), class: "btn" %></span>
+    </li>
 
-</ul>
-
-<span><%= link "Editar", to: Routes.cliente_path(@conn, :edit, @cliente) %></span>
-<span><%= link "Voltar", to: Routes.cliente_path(@conn, :index) %></span>
+  </ul>
+  </div>

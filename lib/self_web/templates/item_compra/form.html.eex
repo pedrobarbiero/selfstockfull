@@ -1,0 +1,51 @@
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, algo deu errado! Por favor veja os erros abaixo.</p>      
+    </div>
+  <% end %>
+
+  <%= label f, :compra_id %>
+  <%= number_input f, :compra_id %>
+  <%= error_tag f, :compra_id %>
+
+  <%= label f, :produto_id %>
+  <%= select f, :produto_id, @produtos, class: "form-control" %>
+  <%= error_tag f, :produto_id %>
+
+  <%= label f, :quantidade %>
+  <%= number_input f, :quantidade %>
+  <%= error_tag f, :quantidade %>
+
+  <%= label f, :valor_unitario %>
+  <%= number_input f, :valor_unitario, step: "any" %>
+  <%= error_tag f, :valor_unitario %>
+
+  <div>
+    <%= submit "Salvar" %>
+  </div>
+
+
+<table class="table table-hover" >
+  <thead>
+    <tr>
+      <th>Quantidade</th>
+      <th>Valor unitario</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for item_compra <- @itens_compra do %>
+    <tr>
+      <td><%= item_compra.quantidade %></td>
+      <td><%= item_compra.valor_unitario %></td>
+      <td>        
+        <%= link "Excluir", to: Routes.item_compra_path(@conn, :delete, item_compra), method: :delete, data: [confirm: "Tem certeza?"], class: "btn" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+
+<% end %>

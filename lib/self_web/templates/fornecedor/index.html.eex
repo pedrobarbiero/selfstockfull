@@ -1,36 +1,38 @@
-<h1>Fornecedores</h1>
+<div class="default-form"> 
+  <h1 class="h1">Fornecedores</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Nome fantasia</th>
-      <th>Razao social</th>
-      <th>Email</th>
-      <th>Cnpj</th>
-      <th>Telefone</th>
-      <th>Inscrica estadual</th>
+  <table  class="table table-hover">
+    <thead>
+      <tr>
+        <th>Nome fantasia</th>
+        <th>Razao social</th>
+        <th>Email</th>
+        <th>Cnpj</th>
+        <th>Telefone</th>
+        <th>Inscrica estadual</th>
 
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-<%= for fornecedor <- @fornecedores do %>
-    <tr>
-      <td><%= fornecedor.nome_fantasia %></td>
-      <td><%= fornecedor.razao_social %></td>
-      <td><%= fornecedor.email %></td>
-      <td><%= fornecedor.cnpj %></td>
-      <td><%= fornecedor.telefone %></td>
-      <td><%= fornecedor.inscrica_estadual %></td>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+  <%= for fornecedor <- @fornecedores do %>
+      <tr>
+        <td><%= fornecedor.nome_fantasia %></td>
+        <td><%= fornecedor.razao_social %></td>
+        <td><%= fornecedor.email %></td>
+        <td><%= fornecedor.cnpj %></td>
+        <td><%= fornecedor.telefone %></td>
+        <td><%= fornecedor.inscrica_estadual %></td>
 
-      <td>
-        <%= link "Visualizar", to: Routes.fornecedor_path(@conn, :show, fornecedor) %>
-        <%= link "Editar", to: Routes.fornecedor_path(@conn, :edit, fornecedor) %>
-        <%= link "Excluir", to: Routes.fornecedor_path(@conn, :delete, fornecedor), method: :delete, data: [confirm: "Tem certeza?"] %>
-      </td>
-    </tr>
-<% end %>
-  </tbody>
-</table>
+        <td>
+          <%= link "Visualizar", to: Routes.fornecedor_path(@conn, :show, fornecedor), class: "btn" %>
+          <%= link "Editar", to: Routes.fornecedor_path(@conn, :edit, fornecedor), class: "btn" %>
+          <%= link "Excluir", to: Routes.fornecedor_path(@conn, :delete, fornecedor), method: :delete, data: [confirm: "Tem certeza?"], class: "btn" %>
+        </td>
+      </tr>
+  <% end %>
+    </tbody>
+  </table>
 
-<span><%= link "Novo", to: Routes.fornecedor_path(@conn, :new) %></span>
+  <span><%= link "Novo", to: Routes.fornecedor_path(@conn, :new), class: "btn" %></span>
+</div>

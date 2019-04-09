@@ -1,0 +1,37 @@
+<div class="default-form">    
+  <h1 class="h1">Produtos</h1>
+ 
+  <table class="table table-hover ">
+    <thead>
+      <tr>
+        <th scope="col">Nome</th>
+        <th scope="col">Descricao</th>
+        <th scope="col">Valor compra</th>
+        <th scope="col"> Valor venda</th>
+        <th scope="col">Tipo</th>
+
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+  <%= for produto <- @produtos do %>
+      <tr>
+        <td scope="row"><%= produto.nome %></td>
+        <td scope="row"><%= produto.descricao %></td>
+        <td scope="row"><%= produto.valor_compra %></td>
+        <td scope="row"><%= produto.valor_venda %></td>
+        <td scope="row"><%= produto.tipo %></td>
+
+        <td>
+          <%= link "Visualizar", to: Routes.produto_path(@conn, :show, produto), class: "btn" %>
+          <%= link "Alterar", to: Routes.produto_path(@conn, :edit, produto), class: "btn" %>
+          <%= link "Excluir", to: Routes.produto_path(@conn, :delete, produto), method: :delete, data: [confirm: "Tem certeza?"], class: "btn" %>
+        </td>
+      </tr>
+  <% end %>
+    </tbody>
+  </table>
+
+
+  <span><%= link "Novo", to: Routes.produto_path(@conn, :new), class: "btn" %></span>
+</div>

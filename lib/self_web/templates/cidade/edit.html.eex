@@ -1,5 +1,6 @@
-<h1>Alterar Cidade</h1>
+<div class="default-form"> 
+    <h1  class="h1">Alterar Cidade</h1>
+    <%= render "form.html", Map.put(assigns, :action, Routes.cidade_path(@conn, :update, @cidade)) %>
 
-<%= render "form.html", Map.put(assigns, :action, Routes.cidade_path(@conn, :update, @cidade)) %>
-
-<span><%= link "Voltar", to: Routes.cidade_path(@conn, :index) %></span>
+    <span><%= link "Voltar", to: Routes.cidade_path(@conn, :index), class: "btn" %></span>
+</div>

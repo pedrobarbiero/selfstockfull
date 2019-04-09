@@ -5,6 +5,8 @@ defmodule SelfWeb.FornecedorController do
   alias Self.Ator.Fornecedor
   alias Self.Localizacao
 
+  plug SelfWeb.Plug.RequireAuth when action in [:index, :edit, :new, :show, :create, :update, :delete]
+
   def index(conn, _params) do
     fornecedores = Ator.list_fornecedores()
     render(conn, "index.html", fornecedores: fornecedores)
@@ -20,7 +22,7 @@ defmodule SelfWeb.FornecedorController do
     case Ator.create_fornecedor(fornecedor_params) do
       {:ok, fornecedor} ->
         conn
-        |> put_flash(:info, "Fornecedor created successfully.")
+        |> put_flash(:info, "Fornecedor criado com sucesso.")
         |> redirect(to: Routes.fornecedor_path(conn, :show, fornecedor))
 
       {:error, %Ecto.Changeset{} = changeset} ->
@@ -47,7 +49,7 @@ defmodule SelfWeb.FornecedorController do
     case Ator.update_fornecedor(fornecedor, fornecedor_params) do
       {:ok, fornecedor} ->
         conn
-        |> put_flash(:info, "Fornecedor updated successfully.")
+        |> put_flash(:info, "Fornecedor atualizado com sucesso.")
         |> redirect(to: Routes.fornecedor_path(conn, :show, fornecedor))
 
       {:error, %Ecto.Changeset{} = changeset} ->
@@ -61,7 +63,7 @@ defmodule SelfWeb.FornecedorController do
     {:ok, _fornecedor} = Ator.delete_fornecedor(fornecedor)
 
     conn
-    |> put_flash(:info, "Fornecedor deleted successfully.")
+    |> put_flash(:info, "Fornecedor excluido com sucesso.")
     |> redirect(to: Routes.fornecedor_path(conn, :index))
   end
 end

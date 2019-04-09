@@ -1,28 +1,30 @@
-<h1>Estados</h1>
+<div class="default-form">  
+  <h1 class="h1">Estados</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Nome</th>
-      <th>Uf</th>
+  <table  class="table table-hover">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>UF</th>
 
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-<%= for estado <- @estados do %>
-    <tr>
-      <td><%= estado.nome %></td>
-      <td><%= estado.uf %></td>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+  <%= for estado <- @estados do %>
+      <tr>
+        <td><%= estado.nome %></td>
+        <td><%= estado.uf %></td>
 
-      <td>
-        <%= link "Visualizar", to: Routes.estado_path(@conn, :show, estado) %>
-        <%= link "Editar", to: Routes.estado_path(@conn, :edit, estado) %>
-        <%= link "Excluir", to: Routes.estado_path(@conn, :delete, estado), method: :delete, data: [confirm: "Tem certeza?"] %>
-      </td>
-    </tr>
-<% end %>
-  </tbody>
-</table>
+        <td>
+          <%= link "Visualizar", to: Routes.estado_path(@conn, :show, estado), class: "btn" %>
+          <%= link "Editar", to: Routes.estado_path(@conn, :edit, estado), class: "btn" %>
+          <%= link "Excluir", to: Routes.estado_path(@conn, :delete, estado), method: :delete, data: [confirm: "Tem certeza?"], class: "btn" %>
+        </td>
+      </tr>
+  <% end %>
+    </tbody>
+  </table>
 
-<span><%= link "Novo", to: Routes.estado_path(@conn, :new) %></span>
+  <span><%= link "Novo", to: Routes.estado_path(@conn, :new), class: "btn" %></span>
+</div>

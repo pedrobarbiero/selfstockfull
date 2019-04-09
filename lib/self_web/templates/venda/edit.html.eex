@@ -1,0 +1,7 @@
+<div class="default-form">
+    <h1 class="h1">Alterar Venda</h1>
+
+    <%= render "form.html", Map.put(assigns, :action, Routes.venda_path(@conn, :update, @venda)) %>
+
+    <span><%= link "Voltar", to: Routes.venda_path(@conn, :index), class: "btn" %></span>
+</div>

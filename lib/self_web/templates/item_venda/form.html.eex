@@ -1,0 +1,44 @@
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, algo deu errado! Por favor veja os erros abaixo.</p>      
+    </div>
+  <% end %>
+
+  <%= label f, :venda_id %>
+  <%= number_input f, :venda_id%>
+  <%= error_tag f, :venda_id %>
+
+  <%= label f, :produto_id %>
+  <%= select f, :produto_id, @produtos, class: "form-control" %>
+  <%= error_tag f, :produto_id %>
+
+  <%= label f, :quantidade %>
+  <%= number_input f, :quantidade %>
+  <%= error_tag f, :quantidade %>
+
+  <div>
+    <%= submit "Salvar" %>
+  </div>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Quantidade</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for item_venda <- @itens_venda do %>
+    <tr>
+      <td><%= item_venda.quantidade %></td>
+      <td>       
+        <%= link "Excluir", to: Routes.item_venda_path(@conn, :delete, item_venda), method: :delete, data: [confirm: "Tem certeza?"], class: "btn" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+
+<% end %>

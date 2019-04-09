@@ -1,0 +1,34 @@
+<div class="default-form"> 
+  <h1 class="h1">Lista de Usuarios</h1>
+  <table  class="table table-hover">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Provider</th>
+        <th>Email</th>
+        <%=#<th>Token</th> %>
+
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+    
+  <%= for usuario <- @usuarios do %>
+      <tr>
+        <td><%= usuario.nome %></td>
+        <td><%= usuario.provider %></td>
+        <td><%= usuario.email %></td>
+        <%= #<td><%= usuario.token </td>%>
+
+        <td>
+          <%= link "Visualizar", to: Routes.usuario_path(@conn, :show, usuario), class: "btn" %>
+          <%= link "Alterar", to: Routes.usuario_path(@conn, :edit, usuario), class: "btn" %>
+          <%= link "Excluir", to: Routes.usuario_path(@conn, :delete, usuario), method: :delete, data: [confirm: "Tem certeza?"], class: "btn" %>
+        </td>
+      </tr>
+  <% end %>
+    </tbody>
+  </table>
+
+  <span><%= link "Novo", to: Routes.usuario_path(@conn, :new), class: "btn" %></span>
+</div>

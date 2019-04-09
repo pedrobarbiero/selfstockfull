@@ -4,6 +4,8 @@ defmodule SelfWeb.EstadoController do
   alias Self.Localizacao
   alias Self.Localizacao.Estado
 
+    plug SelfWeb.Plug.RequireAuth when action in [:index, :edit, :new, :show, :create, :update, :delete]
+
   def index(conn, _params) do
     estados = Localizacao.list_estados()
     render(conn, "index.html", estados: estados)
@@ -19,7 +21,7 @@ defmodule SelfWeb.EstadoController do
     case Localizacao.create_estado(estado_params) do
       {:ok, estado} ->
         conn
-        |> put_flash(:info, "Estado created successfully.")
+        |> put_flash(:info, "Estado criado com sucesso.")
         |> redirect(to: Routes.estado_path(conn, :show, estado))
 
       {:error, %Ecto.Changeset{} = changeset} ->
@@ -46,7 +48,7 @@ defmodule SelfWeb.EstadoController do
     case Localizacao.update_estado(estado, estado_params) do
       {:ok, estado} ->
         conn
-        |> put_flash(:info, "Estado updated successfully.")
+        |> put_flash(:info, "Estado atualizado com sucesso.")
         |> redirect(to: Routes.estado_path(conn, :show, estado))
 
       {:error, %Ecto.Changeset{} = changeset} ->
@@ -60,7 +62,7 @@ defmodule SelfWeb.EstadoController do
     {:ok, _estado} = Localizacao.delete_estado(estado)
 
     conn
-    |> put_flash(:info, "Estado deleted successfully.")
+    |> put_flash(:info, "Estado excluido com sucesso.")
     |> redirect(to: Routes.estado_path(conn, :index))
   end
 end

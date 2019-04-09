@@ -5,6 +5,9 @@ defmodule SelfWeb.ClienteController do
   alias Self.Localizacao
   alias Self.Ator.Cliente
 
+  plug SelfWeb.Plug.RequireAuth
+       when action in [:index, :edit, :new, :show, :create, :update, :delete]
+
   def index(conn, _params) do
     clientes = Ator.list_clientes()
     render(conn, "index.html", clientes: clientes)
@@ -13,19 +16,21 @@ defmodule SelfWeb.ClienteController do
   def new(conn, _params) do
     changeset = Ator.change_cliente(%Cliente{})
     enderecos = Localizacao.select_enderecos()
-    render(conn, "new.html", changeset: changeset, enderecos: enderecos)
+    sexos = Ator.select_sexo()
+    render(conn, "new.html", changeset: changeset, enderecos: enderecos, sexos: sexos)
   end
 
   def create(conn, %{"cliente" => cliente_params}) do
     case Ator.create_cliente(cliente_params) do
       {:ok, cliente} ->
         conn
-        |> put_flash(:info, "Cliente created successfully.")
+        |> put_flash(:info, "Cliente criado com sucesso.")
         |> redirect(to: Routes.cliente_path(conn, :show, cliente))
 
       {:error, %Ecto.Changeset{} = changeset} ->
         enderecos = Localizacao.select_enderecos()
-        render(conn, "new.html", changeset: changeset, enderecos: enderecos)
+        sexos = Ator.select_sexo()
+        render(conn, "new.html", changeset: changeset, enderecos: enderecos, sexos: sexos)
     end
   end
 
@@ -38,7 +43,14 @@ defmodule SelfWeb.ClienteController do
     cliente = Ator.get_cliente!(id)
     changeset = Ator.change_cliente(cliente)
     enderecos = Localizacao.select_enderecos()
-    render(conn, "edit.html", cliente: cliente, changeset: changeset, enderecos: enderecos)
+    sexos = Ator.select_sexo()
+
+    render(conn, "edit.html",
+      cliente: cliente,
+      changeset: changeset,
+      enderecos: enderecos,
+      sexos: sexos
+    )
   end
 
   def update(conn, %{"id" => id, "cliente" => cliente_params}) do
@@ -47,12 +59,19 @@ defmodule SelfWeb.ClienteController do
     case Ator.update_cliente(cliente, cliente_params) do
       {:ok, cliente} ->
         conn
-        |> put_flash(:info, "Cliente updated successfully.")
+        |> put_flash(:info, "Cliente atualizado com sucesso.")
         |> redirect(to: Routes.cliente_path(conn, :show, cliente))
 
       {:error, %Ecto.Changeset{} = changeset} ->
         enderecos = Localizacao.select_enderecos()
-        render(conn, "edit.html", cliente: cliente, changeset: changeset, enderecos: enderecos)
+        sexos = Ator.select_sexo()
+
+        render(conn, "edit.html",
+          cliente: cliente,
+          changeset: changeset,
+          enderecos: enderecos,
+          sexos: sexos
+        )
     end
   end
 
@@ -61,7 +80,7 @@ defmodule SelfWeb.ClienteController do
     {:ok, _cliente} = Ator.delete_cliente(cliente)
 
     conn
-    |> put_flash(:info, "Cliente deleted successfully.")
+    |> put_flash(:info, "Cliente excluido com sucesso.")
     |> redirect(to: Routes.cliente_path(conn, :index))
   end
 end

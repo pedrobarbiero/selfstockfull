@@ -1,0 +1,41 @@
+<div class="default-form">   
+  <h1 class="h1">Compras</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Numero</th>
+        <th>Data</th>
+        <th>Icms</th>
+        <th>Desconto</th>
+        <th>Vencimento</th>
+
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+  <%= for compra <- @compras do %>
+      <tr>
+        <td><%= compra.numero %></td>
+        <td><%= compra.data %></td>
+        <td><%= compra.icms %></td>
+        <td><%= compra.desconto %></td>
+        <td><%= compra.vencimento %></td>
+
+        <td>
+          <%= link "Visualizar", to: Routes.compra_path(@conn, :show, compra), class: "btn" %>
+          <%= link "Alterar", to: Routes.compra_path(@conn, :edit, compra), class: "btn" %>
+          <%= link "Excluir", to: Routes.compra_path(@conn, :delete, compra), method: :delete, data: [confirm: "Tem certeza?"], class: "btn" %>        
+          <div class="placeholder">
+            <div class="upside">
+              <a href="<%= Routes.item_compra_path(@conn, :compra, compra) %>" class="btn"><i class="fas fa-plus"></i></a>
+            </div>
+          </div>
+        </td>
+      </tr>
+  <% end %>
+    </tbody>
+  </table>
+
+  <span><%= link "Novo", to: Routes.compra_path(@conn, :new), class: "btn" %></span>
+</div>

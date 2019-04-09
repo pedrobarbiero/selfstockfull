@@ -1,0 +1,41 @@
+<div class="default-form">
+  <h1 class="h1">Compra</h1>
+
+  <ul>
+
+    <li>
+      <strong>Numero:</strong>
+      <%= @compra.numero %>
+    </li>
+
+    <li>
+      <strong>Data:</strong>
+      <%= @compra.data %>
+    </li>
+
+    <li>
+      <strong>Icms:</strong>
+      <%= @compra.icms %>
+    </li>
+
+    <li>
+      <strong>Desconto:</strong>
+      <%= @compra.desconto %>
+    </li>
+
+    <li>
+      <strong>Vencimento:</strong>
+      <%= @compra.vencimento %>
+    </li>
+    <li>
+        <span><%= link "Alterar", to: Routes.compra_path(@conn, :edit, @compra), class: "btn" %></span>
+    </li>
+    <li>
+        <span><%= link "Voltar", to: Routes.compra_path(@conn, :index), class: "btn" %></span>
+    </li>
+
+  </ul>
+
+
+
+</div>

@@ -4,6 +4,8 @@ defmodule SelfWeb.EnderecoController do
   alias Self.Localizacao
   alias Self.Localizacao.Endereco
 
+  plug SelfWeb.Plug.RequireAuth when action in [:index, :edit, :new, :show, :create, :update, :delete]
+
   def index(conn, _params) do
     enderecos = Localizacao.list_enderecos()
     render(conn, "index.html", enderecos: enderecos)
@@ -19,7 +21,7 @@ defmodule SelfWeb.EnderecoController do
     case Localizacao.create_endereco(endereco_params) do
       {:ok, endereco} ->
         conn
-        |> put_flash(:info, "Endereco created successfully.")
+        |> put_flash(:info, "Endereço criado com sucesso.")
         |> redirect(to: Routes.endereco_path(conn, :show, endereco))
 
       {:error, %Ecto.Changeset{} = changeset} ->
@@ -46,7 +48,7 @@ defmodule SelfWeb.EnderecoController do
     case Localizacao.update_endereco(endereco, endereco_params) do
       {:ok, endereco} ->
         conn
-        |> put_flash(:info, "Endereco updated successfully.")
+        |> put_flash(:info, "Endereço atualizado com sucesso.")
         |> redirect(to: Routes.endereco_path(conn, :show, endereco))
 
       {:error, %Ecto.Changeset{} = changeset} ->
@@ -60,7 +62,7 @@ defmodule SelfWeb.EnderecoController do
     {:ok, _endereco} = Localizacao.delete_endereco(endereco)
 
     conn
-    |> put_flash(:info, "Endereco deleted successfully.")
+    |> put_flash(:info, "Endereço excluido com sucesso.")
     |> redirect(to: Routes.endereco_path(conn, :index))
   end
 end

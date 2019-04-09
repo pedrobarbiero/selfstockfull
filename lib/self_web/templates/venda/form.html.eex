@@ -1,0 +1,32 @@
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, algo deu errado! Por favor veja os erros abaixo.</p>      
+    </div>
+  <% end %>
+
+  <%# <%= label f, :valor %>
+  <%# <%= number_input f, :valor, step: "any" %>
+  <%= error_tag f, :valor %>
+
+  <%= label f, :data %>
+  <%= date_input f, :data, class: "form-control" %>
+  <%= error_tag f, :data %>
+
+  <%= label f, :desconto %>
+  <%= number_input f, :desconto, step: "any" %>
+  <%= error_tag f, :desconto %>
+
+  <%= label f, :funcionario_id %>
+  <%= select f, :funcionario_id, @funcionarios, class: "form-control" %>
+  <%= error_tag f, :funcionario_id %>
+
+  <%= label f, :cliente_id %>
+  <%= select f, :cliente_id, @clientes, class: "form-control" %>
+  <%= error_tag f, :cliente_id %>
+ 
+   
+  <div>
+    <%= submit "Salvar" %>
+  </div>
+<% end %>

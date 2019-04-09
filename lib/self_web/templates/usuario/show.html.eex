@@ -1,0 +1,32 @@
+<div class="default-form"> 
+  <h1 class="h1">Usuario</h1>
+
+  <ul>
+
+    <li>
+      <strong>Nome:</strong>
+      <%= @usuario.nome %>
+    </li>
+
+    <li>
+      <strong>Provider:</strong>
+      <%= @usuario.provider %>
+    </li>
+
+    <li>
+      <strong>Email:</strong>
+      <%= @usuario.email %>
+    </li>
+
+    <li>
+      <strong>Token:</strong>
+      <%= @usuario.token %>
+    </li>
+    <li>
+      <span><%= link "Alterar", to: Routes.usuario_path(@conn, :edit, @usuario) , class: "btn"%></span>
+    </li>
+    <li>
+      <span><%= link "Voltar", to: Routes.usuario_path(@conn, :index), class: "btn" %></span>
+    </li>
+  </ul>
+</div>

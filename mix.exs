@@ -20,7 +20,7 @@ defmodule Self.MixProject do
   def application do
     [
       mod: {Self.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :runtime_tools, :ueberauth_google, :ueberauth_facebook, :ueberauth_github]
     ]
   end
 
@@ -42,7 +42,12 @@ defmodule Self.MixProject do
       {:phoenix_live_reload, "~> 1.2", only: :dev},
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
-      {:plug_cowboy, "~> 2.0"}
+      {:plug_cowboy, "~> 2.0"},
+      {:ueberauth_google, "~> 0.8"},
+      {:ueberauth_facebook, "~> 0.8"},
+      {:ueberauth_github, "~> 0.7"},
+      {:poison, "~> 3.1"},
+      {:brcpfcnpj, "~> 0.2.0"}
     ]
   end
 

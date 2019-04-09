@@ -209,4 +209,69 @@ defmodule Self.AtorTest do
       assert %Ecto.Changeset{} = Ator.change_funcionario(funcionario)
     end
   end
+
+  describe "usuarios" do
+    alias Self.Ator.Usuario
+
+    @valid_attrs %{email: "some email", nome: "some nome", provider: "some provider", token: "some token"}
+    @update_attrs %{email: "some updated email", nome: "some updated nome", provider: "some updated provider", token: "some updated token"}
+    @invalid_attrs %{email: nil, nome: nil, provider: nil, token: nil}
+
+    def usuario_fixture(attrs \\ %{}) do
+      {:ok, usuario} =
+        attrs
+        |> Enum.into(@valid_attrs)
+        |> Ator.create_usuario()
+
+      usuario
+    end
+
+    test "list_usuarios/0 returns all usuarios" do
+      usuario = usuario_fixture()
+      assert Ator.list_usuarios() == [usuario]
+    end
+
+    test "get_usuario!/1 returns the usuario with given id" do
+      usuario = usuario_fixture()
+      assert Ator.get_usuario!(usuario.id) == usuario
+    end
+
+    test "create_usuario/1 with valid data creates a usuario" do
+      assert {:ok, %Usuario{} = usuario} = Ator.create_usuario(@valid_attrs)
+      assert usuario.email == "some email"
+      assert usuario.nome == "some nome"
+      assert usuario.provider == "some provider"
+      assert usuario.token == "some token"
+    end
+
+    test "create_usuario/1 with invalid data returns error changeset" do
+      assert {:error, %Ecto.Changeset{}} = Ator.create_usuario(@invalid_attrs)
+    end
+
+    test "update_usuario/2 with valid data updates the usuario" do
+      usuario = usuario_fixture()
+      assert {:ok, %Usuario{} = usuario} = Ator.update_usuario(usuario, @update_attrs)
+      assert usuario.email == "some updated email"
+      assert usuario.nome == "some updated nome"
+      assert usuario.provider == "some updated provider"
+      assert usuario.token == "some updated token"
+    end
+
+    test "update_usuario/2 with invalid data returns error changeset" do
+      usuario = usuario_fixture()
+      assert {:error, %Ecto.Changeset{}} = Ator.update_usuario(usuario, @invalid_attrs)
+      assert usuario == Ator.get_usuario!(usuario.id)
+    end
+
+    test "delete_usuario/1 deletes the usuario" do
+      usuario = usuario_fixture()
+      assert {:ok, %Usuario{}} = Ator.delete_usuario(usuario)
+      assert_raise Ecto.NoResultsError, fn -> Ator.get_usuario!(usuario.id) end
+    end
+
+    test "change_usuario/1 returns a usuario changeset" do
+      usuario = usuario_fixture()
+      assert %Ecto.Changeset{} = Ator.change_usuario(usuario)
+    end
+  end
 end

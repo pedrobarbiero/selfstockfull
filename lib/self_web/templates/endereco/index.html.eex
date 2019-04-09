@@ -1,32 +1,33 @@
-<h1>Endereços</h1>
+<div class="default-form"> 
+  <h1 class="h1">Endereços</h1>
+  <table  class="table table-hover">
+    <thead>
+      <tr>
+        <th>Logradouro</th>
+        <th>Numero</th>
+        <th>Cep</th>
+        <th>Bairro</th>
 
-<table>
-  <thead>
-    <tr>
-      <th>Logradouro</th>
-      <th>Numero</th>
-      <th>Cep</th>
-      <th>Bairro</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+  <%= for endereco <- @enderecos do %>
+      <tr>
+        <td><%= endereco.logradouro %></td>
+        <td><%= endereco.numero %></td>
+        <td><%= endereco.cep %></td>
+        <td><%= endereco.bairro %></td>
 
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-<%= for endereco <- @enderecos do %>
-    <tr>
-      <td><%= endereco.logradouro %></td>
-      <td><%= endereco.numero %></td>
-      <td><%= endereco.cep %></td>
-      <td><%= endereco.bairro %></td>
+        <td>
+          <%= link "Exibir", to: Routes.endereco_path(@conn, :show, endereco), class: "btn" %>
+          <%= link "Editar", to: Routes.endereco_path(@conn, :edit, endereco), class: "btn" %>
+          <%= link "Excluir", to: Routes.endereco_path(@conn, :delete, endereco), method: :delete, data: [confirm: "Certeza?"], class: "btn" %>
+        </td>
+      </tr>
+  <% end %>
+    </tbody>
+  </table>
 
-      <td>
-        <%= link "Exibir", to: Routes.endereco_path(@conn, :show, endereco) %>
-        <%= link "Editar", to: Routes.endereco_path(@conn, :edit, endereco) %>
-        <%= link "Excluir", to: Routes.endereco_path(@conn, :delete, endereco), method: :delete, data: [confirm: "Certeza?"] %>
-      </td>
-    </tr>
-<% end %>
-  </tbody>
-</table>
-
-<span><%= link "Novo", to: Routes.endereco_path(@conn, :new) %></span>
+  <span><%= link "Novo", to: Routes.endereco_path(@conn, :new), class: "btn" %></span>
+</div>

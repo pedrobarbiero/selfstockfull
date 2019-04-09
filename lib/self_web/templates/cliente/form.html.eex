@@ -6,7 +6,7 @@
   <% end %>
 
   <%= label f, :endereco_id %>
-  <%= select f, :endereco_id, @enderecos %>
+  <%= select f, :endereco_id, @enderecos, class: "form-control" %>
   <%= error_tag f, :endereco_id %>
 
   <%= label f, :nome %>
@@ -14,7 +14,7 @@
   <%= error_tag f, :nome %>
 
   <%= label f, :data_nascimento %>
-  <%= date_select f, :data_nascimento %>
+  <%= date_input f, :data_nascimento, class: "form-control"%>
   <%= error_tag f, :data_nascimento %>
 
   <%= label f, :email %>
@@ -26,7 +26,7 @@
   <%= error_tag f, :cpf %>
 
   <%= label f, :sexo %>
-  <%= number_input f, :sexo %>
+  <%= select f, :sexo, @sexos, class: "form-control" %>
   <%= error_tag f, :sexo %>
 
   <%= label f, :telefone %>
