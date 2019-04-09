@@ -1,26 +1,28 @@
-<h1>Itens de Venda</h1>
+<div class="default-form"> 
+  <h1 class="h1">Itens de Venda</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Quantidade</th>
+  <table  class="table table-hover">
+    <thead>
+      <tr>
+        <th>Quantidade</th>
 
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-<%= for item_venda <- @itens_venda do %>
-    <tr>
-      <td><%= item_venda.quantidade %></td>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+  <%= for item_venda <- @itens_venda do %>
+      <tr>
+        <td><%= item_venda.quantidade %></td>
 
-      <td>
-        <%= link "Exibir", to: Routes.item_venda_path(@conn, :show, item_venda) %>
-        <%= link "Alterar", to: Routes.item_venda_path(@conn, :edit, item_venda) %>
-        <%= link "Excluir", to: Routes.item_venda_path(@conn, :delete, item_venda), method: :delete, data: [confirm: "Tem certeza?"] %>
-      </td>
-    </tr>
-<% end %>
-  </tbody>
-</table>
+        <td>
+          <%= link "Exibir", to: Routes.item_venda_path(@conn, :show, item_venda), class: "btn" %>
+          <%= link "Alterar", to: Routes.item_venda_path(@conn, :edit, item_venda), class: "btn" %>
+          <%= link "Excluir", to: Routes.item_venda_path(@conn, :delete, item_venda), method: :delete, data: [confirm: "Tem certeza?"], class: "btn" %>
+        </td>
+      </tr>
+  <% end %>
+    </tbody>
+  </table>
 
-<span><%= link "Novo Item de Venda", to: Routes.item_venda_path(@conn, :new) %></span>
+  <span><%= link "Novo", to: Routes.item_venda_path(@conn, :new), class: "btn" %></span>
+</div>

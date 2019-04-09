@@ -24,7 +24,8 @@
   <%= label f, :cliente_id %>
   <%= select f, :cliente_id, @clientes, class: "form-control" %>
   <%= error_tag f, :cliente_id %>
-
+ 
+   
   <div>
     <%= submit "Salvar" %>
   </div>

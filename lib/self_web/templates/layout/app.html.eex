@@ -4,6 +4,7 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="icon" href="https://raw.githubusercontent.com/ebasantos/estoque-web-app-front-end/master/src/img/self%20stock.png">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <title>Self Stock WEB</title>
@@ -23,23 +24,24 @@
               <input type="radio" name="arrow--up" id="degree--up-1" />
               <input type="radio" name="arrow--up" id="degree--up-2" />
               <div class="menu__listings">
-                <ul class="circle">
-                <li>
-                    <div class="placeholder">
-                      <div class="upside">
-                        <a href="/" class="button"><i class="fas fa-home"></i></i></a>
-                      </div>
-                    </div>
-                  </li>      
+                
+                <ul class="circle">   
+                  
                   <li>
                     <div class="placeholder">
                       <div class="upside">
-                        <%= link  to: Routes.usuario_path(@conn, :index) , class: "button" do  %>
-                          <i class="fa fa-user"></i>
-                        <%= end %>
+                         <a href="/clientes" class="button"><i class="fas fa-address-book"></i></a>
                       </div>
                     </div>
                   </li>
+                  <li>
+                    <div class="placeholder">
+                      <div class="upside">
+                         <a href="/produtos" class="button"><i class="fas fa-box"></i></a>
+                      </div>
+                    </div>
+                  </li>
+                  
                   <li>
                     <div class="placeholder">
                       <div class="upside">
@@ -50,10 +52,17 @@
                   <li>
                     <div class="placeholder">
                       <div class="upside">
-                        <a href="/produtos" class="button"><i class="fas fa-box"></i></a>
+                        <a href="/vendas" class="button"><i class="fas fa-cash-register"></i></a>
                       </div>
                     </div>
-                  </li>     
+                  </li>
+                  <li>
+                    <div class="placeholder">
+                      <div class="upside">
+                        <a href="/compras" class="button"><i class="fas fa-shopping-cart"></i></a>
+                      </div>
+                    </div>
+                  </li>    
                   <li>
                     <div class="placeholder">
                       <div class="upside">
@@ -88,7 +97,7 @@
                           <a href="/enderecos" class="button"><i class="fas fa-map-marked-alt"></i></a>
                       </div>
                     </div>
-                  </li>      
+                  </li>     
                 </ul>
               </div>
               <div class="menu__arrow menu__arrow--top">
@@ -107,19 +116,28 @@
         <a href="#" class="brand-logo"></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
               <%= if @conn.assigns[:user] do %>
-                <li  class="col-12 ">  
+                <li  class="col-6 ">  
                   <a href="<%= Routes.auth_path(@conn, :logout, "facebook") %>">
                     <i class="fas fa-sign-out-alt"></i> 
                   </a> 
                 </li>
-              <%= else %>
                 <li class="col-6">
+                    <div class="placeholder">
+                      <div class="upside">
+                        <%= link  to: Routes.usuario_path(@conn, :index)  do  %>
+                          <i class="fas fa-user-plus"></i>
+                        <%= end %>
+                      </div>
+                    </div>
+                  </li>
+              <%= else %>
+                <li class="col-3">
                       <a  href="<%= Routes.auth_path(@conn, :request, "facebook") %>">
                           <i class="fab fa-facebook">
                           </i>
                       </a>
                 </li  >  
-                <li class="col-6" >  
+                <li class="col-3" >  
                   <a  href="<%= Routes.auth_path(@conn, :request, "github") %>" >
                     <i class="fab fa-github-alt">
                     </i>

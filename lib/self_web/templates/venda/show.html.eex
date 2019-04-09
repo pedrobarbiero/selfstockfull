@@ -1,23 +1,30 @@
-<h1>Visualizar Venda</h1>
+<div class="default-form">  
+  <h1 class="h1">Visualizar Venda</h1>
 
-<ul>
+  <ul>
 
-  <li>
-    <strong>Valor:</strong>
-    <%= @venda.valor %>
-  </li>
+    <li>
+      <strong>Valor:</strong>
+      <%= @venda.valor %>
+    </li>
 
-  <li>
-    <strong>Data:</strong>
-    <%= @venda.data %>
-  </li>
+    <li>
+      <strong>Data:</strong>
+      <%= @venda.data %>
+    </li>
 
-  <li>
-    <strong>Desconto:</strong>
-    <%= @venda.desconto %>
-  </li>
+    <li>
+      <strong>Desconto:</strong>
+      <%= @venda.desconto %>
+    </li>
+    <li>
+        <span><%= link "Alterar", to: Routes.venda_path(@conn, :edit, @venda), class: "btn" %></span>
+    </li>
+    <li>
+        <span><%= link "Voltar", to: Routes.venda_path(@conn, :index), class: "btn" %></span>
+    </li>
+  </ul>
 
-</ul>
 
-<span><%= link "Alterar", to: Routes.venda_path(@conn, :edit, @venda) %></span>
-<span><%= link "Voltar", to: Routes.venda_path(@conn, :index) %></span>
+
+</div>

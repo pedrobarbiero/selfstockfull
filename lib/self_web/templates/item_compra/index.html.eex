@@ -16,9 +16,9 @@
       <td><%= item_compra.valor_unitario %></td>
 
       <td>
-        <%= link "Visualizar", to: Routes.item_compra_path(@conn, :show, item_compra) %>
-        <%= link "Alterar", to: Routes.item_compra_path(@conn, :edit, item_compra) %>
-        <%= link "Excluir", to: Routes.item_compra_path(@conn, :delete, item_compra), method: :delete, data: [confirm: "Tem certeza?"] %>
+        <%= link "Visualizar", to: Routes.item_compra_path(@conn, :show, item_compra), class: "btn" %>
+        <%= link "Alterar", to: Routes.item_compra_path(@conn, :edit, item_compra), class: "btn" %>
+        <%= link "Excluir", to: Routes.item_compra_path(@conn, :delete, item_compra), method: :delete, data: [confirm: "Tem certeza?"], class: "btn" %>
       </td>
     </tr>
 <% end %>

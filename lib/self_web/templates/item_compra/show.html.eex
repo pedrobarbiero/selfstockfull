@@ -1,18 +1,23 @@
-<h1>Item de compra</h1>
+<div class="default-form"> 
+  <h1 class="h1">Item de compra</h1>
 
-<ul>
+  <ul>
 
-  <li>
-    <strong>Quantidade:</strong>
-    <%= @item_compra.quantidade %>
-  </li>
+    <li>
+      <strong>Quantidade:</strong>
+      <%= @item_compra.quantidade %>
+    </li>
 
-  <li>
-    <strong>Valor unitario:</strong>
-    <%= @item_compra.valor_unitario %>
-  </li>
+    <li>
+      <strong>Valor unitario:</strong>
+      <%= @item_compra.valor_unitario %>
+    </li>
+    <li>
+      <span><%= link "Alterar", to: Routes.item_compra_path(@conn, :edit, @item_compra), class: "btn" %></span>
+    </li>
+    <li>
+      <span><%= link "Voltar", to: Routes.compra_path(@conn, :index), class: "btn" %></span>
+    </li>
 
-</ul>
-
-<span><%= link "Alterar", to: Routes.item_compra_path(@conn, :edit, @item_compra) %></span>
-<span><%= link "Voltar", to: Routes.compra_path(@conn, :index) %></span>
+  </ul>
+</div>

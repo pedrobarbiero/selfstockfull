@@ -115,6 +115,10 @@ header nav li {
   text-align: right;
   white-space: nowrap;
 }
+nav a:hover{
+  color: #48f15e;
+}
+
 header nav ul {
   margin: 1rem;
   margin-top: 0;
@@ -394,6 +398,7 @@ nav{
 #menu__active:checked ~ label .button:hover {
   color: #48f15e;
 }
+
 #menu__active:checked ~ label .menu__arrow {
   visibility: visible;
   transition: all 1s 1.111111111111111s;

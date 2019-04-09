@@ -1,13 +1,15 @@
-<h1>Visualizar Item de Venda</h1>
+<div class="default-form">
+  <h1 class="h1">Visualizar Item de Venda</h1>
 
-<ul>
+  <ul>
 
-  <li>
-    <strong>Quantidade:</strong>
-    <%= @item_venda.quantidade %>
-  </li>
+    <li>
+      <strong>Quantidade:</strong>
+      <%= @item_venda.quantidade %>
+    </li>
 
-</ul>
+  </ul>
 
-<span><%= link "Alterar", to: Routes.item_venda_path(@conn, :edit, @item_venda) %></span>
-<span><%= link "Voltar", to: Routes.item_venda_path(@conn, :index) %></span>
+  <span><%= link "Alterar", to: Routes.item_venda_path(@conn, :edit, @item_venda), class: "btn" %></span>
+  <span><%= link "Voltar", to: Routes.item_venda_path(@conn, :index), class: "btn" %></span>
+</div>

@@ -1,31 +1,37 @@
-<h1>Vendas</h1>
+<div class="default-form"> 
+  <h1 class="h1">Vendas</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Valor</th>
-      <th>Data</th>
-      <th>Desconto</th>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Valor</th>
+        <th>Data</th>
+        <th>Desconto</th>
+        <th>Visualizar itens</th>
 
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-<%= for venda <- @vendas do %>
-    <tr>
-      <td><%= venda.valor %></td>
-      <td><%= venda.data %></td>
-      <td><%= venda.desconto %></td>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+  <%= for venda <- @vendas do %>
+      <tr>
+        <td><%= venda.valor %></td>
+        <td><%= venda.data %></td>
+        <td><%= venda.desconto %></td>
+        <td>
+          <%= link "Visualizar", to: Routes.venda_path(@conn, :show, venda), class: "btn" %>
+          <%= link "Editar", to: Routes.venda_path(@conn, :edit, venda), class: "btn" %>
+          <%= link "Excluir", to: Routes.venda_path(@conn, :delete, venda), method: :delete, data: [confirm: "Tem certeza?"], class: "btn" %>        
+          <div class="placeholder">
+            <div class="upside">
+              <a href="<%= Routes.item_venda_path(@conn, :venda, venda) %>" class="btn"><i class="fas fa-shopping-cart"></i></a>
+            </div>
+          </div>
+        </td>
+      </tr>
+  <% end %>
+    </tbody>
+  </table>
 
-      <td>
-        <%= link "Visualizar", to: Routes.venda_path(@conn, :show, venda) %>
-        <%= link "Editar", to: Routes.venda_path(@conn, :edit, venda) %>
-        <%= link "Excluir", to: Routes.venda_path(@conn, :delete, venda), method: :delete, data: [confirm: "Tem certeza?"] %>        
-        <%= link "Itens", to: Routes.item_venda_path(@conn, :venda, venda) %>
-      </td>
-    </tr>
-<% end %>
-  </tbody>
-</table>
-
-<span><%= link "Nova Venda", to: Routes.venda_path(@conn, :new) %></span>
+  <span><%= link "Nova Venda", to: Routes.venda_path(@conn, :new), class: "btn" %></span>
+</div>

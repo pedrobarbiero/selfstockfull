@@ -1,5 +1,7 @@
-<h1>Alterar Item de venda</h1>
+<div class="default-form"> 
+    <h1 class="h1">Alterar Item de venda</h1>
 
-<%= render "form.html", Map.put(assigns, :action, Routes.item_venda_path(@conn, :update, @item_venda)) %>
+    <%= render "form.html", Map.put(assigns, :action, Routes.item_venda_path(@conn, :update, @item_venda)) %>
 
-<span><%= link "Voltar", to: Routes.venda_path(@conn, :index) %></span>
+    <span><%= link "Voltar", to: Routes.venda_path(@conn, :index), class: "btn" %></span>
+</div>

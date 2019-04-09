@@ -26,7 +26,7 @@
   </div>
 
 
-<table>
+<table class="table table-hover" >
   <thead>
     <tr>
       <th>Quantidade</th>
@@ -40,7 +40,7 @@
       <td><%= item_compra.quantidade %></td>
       <td><%= item_compra.valor_unitario %></td>
       <td>        
-        <%= link "Excluir", to: Routes.item_compra_path(@conn, :delete, item_compra), method: :delete, data: [confirm: "Tem certeza?"] %>
+        <%= link "Excluir", to: Routes.item_compra_path(@conn, :delete, item_compra), method: :delete, data: [confirm: "Tem certeza?"], class: "btn" %>
       </td>
     </tr>
 <% end %>
