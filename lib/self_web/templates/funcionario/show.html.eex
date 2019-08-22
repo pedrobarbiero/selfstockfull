@@ -1,38 +1,42 @@
-<h1>Visualizar Funcionario</h1>
+<div class="default-form"> 
+  <h1 class="h1">Visualizar Funcionario</h1>
 
-<ul>
+  <ul>
 
-  <li>
-    <strong>Nome:</strong>
-    <%= @funcionario.nome %>
-  </li>
+    <li>
+      <strong>Nome:</strong>
+      <%= @funcionario.nome %>
+    </li>
 
-  <li>
-    <strong>Data nascimento:</strong>
-    <%= @funcionario.data_nascimento %>
-  </li>
+    <li>
+      <strong>Data nascimento:</strong>
+      <%= @funcionario.data_nascimento %>
+    </li>
 
-  <li>
-    <strong>Email:</strong>
-    <%= @funcionario.email %>
-  </li>
+    <li>
+      <strong>Email:</strong>
+      <%= @funcionario.email %>
+    </li>
 
-  <li>
-    <strong>Cpf:</strong>
-    <%= @funcionario.cpf %>
-  </li>
+    <li>
+      <strong>Cpf:</strong>
+      <%= @funcionario.cpf %>
+    </li>
 
-  <li>
-    <strong>Sexo:</strong>
-    <%= @funcionario.sexo %>
-  </li>
+    <li>
+      <strong>Sexo:</strong>
+      <%= @funcionario.sexo %>
+    </li>
 
-  <li>
-    <strong>Telefone:</strong>
-    <%= @funcionario.telefone %>
-  </li>
-
-</ul>
-
-<span><%= link "Alterar", to: Routes.funcionario_path(@conn, :edit, @funcionario) %></span>
-<span><%= link "Voltar", to: Routes.funcionario_path(@conn, :index) %></span>
+    <li>
+      <strong>Telefone:</strong>
+      <%= @funcionario.telefone %>
+    </li>
+        <span><%= link "Alterar", to: Routes.funcionario_path(@conn, :edit, @funcionario), class: "btn" %></span>
+    <li>
+    </li>
+    <li>
+        <span><%= link "Voltar", to: Routes.funcionario_path(@conn, :index), class: "btn" %></span>
+    </li>
+  </ul>
+</div>

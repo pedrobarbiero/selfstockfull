@@ -1,5 +1,7 @@
-<h1>Alterar Funcionario</h1>
+<div class="default-form">   
+  <h1 class="h1" >Alterar Funcionario</h1>
 
-<%= render "form.html", Map.put(assigns, :action, Routes.funcionario_path(@conn, :update, @funcionario)) %>
+  <%= render "form.html", Map.put(assigns, :action, Routes.funcionario_path(@conn, :update, @funcionario)) %>
 
-<span><%= link "Voltar", to: Routes.funcionario_path(@conn, :index) %></span>
+  <span><%= link "Voltar", to: Routes.funcionario_path(@conn, :index), class: "btn" %></span>
+</div>
